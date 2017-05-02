@@ -155,6 +155,10 @@ function makeSubmitButton(doc)
 
 
   doc.body.appendChild(submit);
+
+  gf.highlighted = ["Canada","Russia","Cuba","Belgium"];
+
+  map.series.regions[0].setValues(generateColors());
 }
 
 function makeEvidenceWindow(data)
@@ -177,4 +181,14 @@ function gfLayClues(clues)
     var clue = clues[i];
     makeClue(clue);
   }
+}
+
+function gfHighlighted(country)
+{
+  for (i in gf.highlighted)
+  {
+    if (country==gf.highlighted[i])
+      return true;
+  }
+  return false;
 }
