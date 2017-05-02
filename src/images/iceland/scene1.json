@@ -2,22 +2,26 @@ iceland.scene[0] = {
   "name": "scene1",
   "clues": [
      {
-        "position": [80,90,70,20],
+        "position": [80,90,70,50],
         "data":
         {
           "type": "language",
+          "size": [200,400],
           "text": "What languages might be present?",
           "list": ["English","Spanish","German","Swedish","Icelandic","Hebrew","Japanese"]
         },
         "symbol": "none"
      },
      {
-       "position": [405,40,20,60],
+       "position": [405,20,20,60],
        "data":
        {
          "type": "religious",
+         "size": [200,400],
          "text": "what is the dominant religion associated with this building?",
-         "list": ["Christianity", "Judaism", "Islam","Hinduism"]
+         "list": ["Christianity", "Judaism", "Islam","Hinduism"],
+         "image": null,
+         "buttons": null
        },
        "symbol": "none"
      }
