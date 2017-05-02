@@ -63,6 +63,12 @@ function gfSetImage()
   gfAddArrow(false);
   gfAddArrow(true);
 
+  loadJSON('http://web.mit.edu/pcaplan/Public/geografun/src/images/iceland/clue1.json',function(response) {
+    //var json = JSON.parse(response);
+    console.log(response);
+    console.log('hello');
+  });
+
 }
 
 function loadJSON(file,callback)
@@ -73,7 +79,6 @@ function loadJSON(file,callback)
   xobj.onreadystatechange = function() {
     if (xobj.readyState == 4 && xobj.status == "200")
     {
-      // .open will NOT return a value but simply returns undefined in async mode so use a callback
       callback(xobj.responseText);
     }
   }
