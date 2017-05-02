@@ -1,0 +1,59 @@
+#logbook {
+  width: 45%;
+  height: 200px;
+  border: 5px;
+  padding: 10px;
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  overflow: scroll
+}
+
+#mapframe {
+  width: 45%;
+  height: 200px;
+  border: 5px;
+  padding: 10px;
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+#viewframe {
+  width: 100%;
+  height: 200px;
+  margin: 0 0 0 0;
+  border: 0px;
+  padding: 0px;
+  float: left;
+  /* background: beige; */
+}
+
+/* canvas that holds image */
+canvas {
+    width:                    230px;
+    height:                   150px;
+    border-width:               0px;
+		background: grey;
+}
+
+#play {
+    /*background: url('http://cdn1.iconfinder.com/data/icons/iconslandplayer/PNG/64x64/CircleBlue/Play1Pressed.png') center center no-repeat;*/
+    background: url('images/play.png') center center no-repeat;
+    margin: 0px 0px 0 0;
+    height: 200px;
+    background-size:contain;
+    position: relative;
+    z-index: 10;
+}
+
+#arrowright {
+  background: url('images/arrow.png') center center no-repeat;
+  margin: 0px 0px 0 0;
+  height: 100px;
+  background-size:contain;
+  position: relative;
+  z-index: 10;
+}

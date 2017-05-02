@@ -1,0 +1,15 @@
+sceneClues1 = {
+  "name": "scene1",
+  "clues": [
+     {
+        "position": [10,20],
+        "file": "clue1.json",
+        "symbol": "none"
+     },
+     {
+       "position": [40,30],
+       "file": "clue2.json",
+       "symbol": "none"
+     }
+  ]
+}

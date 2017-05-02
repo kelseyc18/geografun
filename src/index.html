@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML PUBLIC "~//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+
+<html id="mainBody">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+    <title>
+      geografun
+    </title>
+
+    <link rel="shortcut icon" href="images/favicon.ico">
+
+    <script>
+      var totalSeconds;
+      var timer;
+      var gf = {};  // object to store "globals"
+
+
+    </script>
+
+    <script type="text/javascript" src="geografun.js"> </script>
+    <script type="text/javascript" src="guide.js"> </script>
+    <script type="text/javascript" src="timer.js"> </script>
+    <script type="text/javascript" src="third_party/require.js"> </script>
+    <script type="text/javascript" src="third_party/jquery.js"> </script>
+
+    <script type="text/javascript" src="images/iceland/scene1.json"></script>
+
+    <link rel="stylesheet" type="text/css" href="geografun.css" />
+
+  </head>
+
+  <body onload="">
+
+    <div id="logbook" style="float:left; background: grey">
+      <table id="guide"><thead><tr><th></th><th>Field guide</th></tr>
+      </table>
+    </div>
+    <div id="mapframe" style="float:left"> </div>
+
+    <p>
+    <div id="viewframe" style="float:left">
+      <div id="play" onclick="gfStart()"></div>
+    </div>
+    </p>
+
+    <div id='timer'/>
+    <script type="text/javascript">window.onload = CreateTimer("timer",10);</script>
+
+    <script type="text/javascript">
+
+    var map;
+    var loc;
+
+    function initMap()
+    {
+      loc = {lat: 0, lng: 0 };
+      map = new google.maps.Map(document.getElementById('mapframe') , { zoom: 1, center: loc, streetViewControl: false, maxZoom: 5 } );
+    }
+    </script>
+
+  <!-- load google maps api -->
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBmD-NeYlwCblBy5Rzp_WNY6ktOQ_DY6gY&callback=initMap"> </script>
+
+  </body>
+
+</html>
