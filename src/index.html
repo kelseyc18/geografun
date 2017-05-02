@@ -15,8 +15,6 @@
       var totalSeconds;
       var timer;
       var gf = {};  // object to store "globals"
-
-
     </script>
 
     <script type="text/javascript" src="geografun.js"> </script>
@@ -25,6 +23,20 @@
     <script type="text/javascript" src="third_party/require.js"> </script>
     <script type="text/javascript" src="third_party/jquery.js"> </script>
 
+    <!-- initialize the location holders -->
+    <script type="text/javascript">
+      var iceland = {};
+      var greece = {};
+
+      iceland.nscene = 1;
+      greece.nscene  = 0;
+
+      iceland.scene = Array(iceland.nscene);
+      greece.scene  = Array(greece.nscene);
+      var locations = [iceland,greece];
+    </script>
+
+    <!-- load possible locations and scenes -->
     <script type="text/javascript" src="images/iceland/scene1.json"></script>
 
     <link rel="stylesheet" type="text/css" href="geografun.css" />
@@ -46,7 +58,7 @@
     </p>
 
     <div id='timer'/>
-    <script type="text/javascript">window.onload = CreateTimer("timer",10);</script>
+    <script type="text/javascript">window.onload = CreateTimer("timer",1000);</script>
 
     <script type="text/javascript">
 

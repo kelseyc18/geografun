@@ -1,14 +1,24 @@
-sceneClues1 = {
+iceland.scene[0] = {
   "name": "scene1",
   "clues": [
      {
-        "position": [10,20],
-        "file": "clue1.json",
+        "position": [80,90,70,20],
+        "data":
+        {
+          "type": "language",
+          "text": "What languages might be present?",
+          "list": ["English","Spanish","German","Swedish","Icelandic","Hebrew","Japanese"]
+        },
         "symbol": "none"
      },
      {
-       "position": [40,30],
-       "file": "clue2.json",
+       "position": [405,40,20,60],
+       "data":
+       {
+         "type": "religious",
+         "text": "what is the dominant religion associated with this building?",
+         "list": ["Christianity", "Judaism", "Islam","Hinduism"]
+       },
        "symbol": "none"
      }
   ]

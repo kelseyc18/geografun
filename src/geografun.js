@@ -57,39 +57,44 @@ function gfSetImage()
   viewer.style.backgroundImage = "url('images/"+gf.location+"/img"+gf.imageCounter.toString()+".png";
   viewer.style.backgroundSize = "cover";
 
-  gf.currentClues = sceneClues1;
+  gf.currentClues = iceland.scene[0];
   console.log(gf.currentClues.clues);
+
+  gfLayClues(gf.currentClues.clues);
 
   gfAddArrow(false);
   gfAddArrow(true);
 
-  loadJSON('http://web.mit.edu/pcaplan/Public/geografun/src/images/iceland/clue1.json',function(response) {
-    //var json = JSON.parse(response);
-    console.log(response);
-    console.log('hello');
-  });
+}
+
+function makeClue(clue)
+{
+  var viewer = document.getElementById('viewframe');
+
+  var box = document.createElement('div');
+  box.style.border = "1px solid red";
+  box.style.position = "relative";
+  box.style.width = clue.position[2]+"px";
+  box.style.height = clue.position[3]+"px";
+  box.style.zIndex = 1;
+
+  box.style.left = clue.position[0]+"px";
+  box.style.top = clue.position[1]+"px";
+
+  // set onclick function for clue
+
+  viewer.appendChild(box);
 
 }
 
-function loadJSON(file,callback)
+function gfLayClues(clues)
 {
-  var xobj = new XMLHttpRequest();
-  xobj.overrideMimeType("application/json");
-  xobj.open('GET', file , true);
-  xobj.onreadystatechange = function() {
-    if (xobj.readyState == 4 && xobj.status == "200")
-    {
-      callback(xobj.responseText);
-    }
-  }
-  xobj.send(null);
-}
-
-function gfClickImage(x)
-{
-  for (c in gf.currentClues)
+  for (i in clues)
   {
-    // check if the mouseclick is close to c
+    var clue = clues[i];
+    console.log(clue);
+    console.log("laying clue at "+clue.position);
 
+    makeClue(clue);
   }
 }

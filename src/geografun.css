@@ -57,3 +57,11 @@ canvas {
   position: relative;
   z-index: 10;
 }
+
+#clue {
+  height: 20px;
+  width: 20px;
+  position: relative;
+  z-index: 10;
+  border: 1px solid red;
+}
