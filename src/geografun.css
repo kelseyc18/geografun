@@ -48,12 +48,25 @@
   height: 20px;
   padding: 0px;
   border: 0px;
-  width: 50%;
+  width: 10%;
   float: left;
   background-size:contain;
   position: relative;
   z-index: 10;
 }
+
+#arrowfill {
+  margin: 0px 0px 0px 0px;
+  height: 20px;
+  padding: 0px;
+  border: 0px;
+  width: 80%;
+  float: left;
+  background-size:contain;
+  position: relative;
+  z-index: 10;
+}
+
 
 #arrowright {
   background: url('images/arrowright.png') right center no-repeat;
@@ -61,7 +74,7 @@
   height: 20px;
   padding: 0px;
   border: 0px;
-  width: 50%;
+  width: 10%;
   float: right;
   background-size:contain;
   position: relative;

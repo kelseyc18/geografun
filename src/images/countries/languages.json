@@ -1,0 +1,52 @@
+var english_ =
+[
+	"Australia",
+	"Canada",
+	"Malta",
+	"New Zealand",
+	"Singapore",
+	"Malaysia",
+	"South Africa",
+  "United States",
+  "United Kingdom"
+];
+
+var french_ =
+[
+	"France",
+	"Canada",
+	"Madagascar",
+	"Cameroon",
+	"Ivory Coast",
+	"Niger",
+	"Burkina Faso",
+	"Mali",
+	"Haiti",
+	"Switzerland",
+	"Reublic of the Congo",
+	"Belgium",
+	"Monaco",
+	"Luxembourg"
+];
+
+var spanish_ = 
+[
+	"Spain",
+	"Mexico",
+	"Cuba",
+	"Dominican Republic",
+	"United States",
+	"Guatemala",
+	"Panama"
+]
+
+var icelandic_ = 
+[
+	"Iceland"
+];
+
+var dutch_ = 
+[
+	"Holland",
+	"Belgium"
+];

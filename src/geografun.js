@@ -20,13 +20,15 @@ function gfStart()
   // initialize highlighted countries to be empty
   gf.highlighted = [];
 
-  // this should be elsewhere
-  makeGuideEntry("linguistic","latin","street sign","images/arrow.png");
-  makeGuideEntry("religious","christian","church","images/arrow.png");
-
   // load the possible entries
   gf.possibleEntries = [];
   gf.possibleEntries.push( {name: "Hinduism", list: hinduism_ } );
+  gf.possibleEntries.push( {name: "Islam", list: islam_ } );
+  gf.possibleEntries.push( {name: "English", list: english_ } );
+  gf.possibleEntries.push( {name: "Spanish", list: spanish_ } );
+  gf.possibleEntries.push( {name: "French", list: french_ } );
+  gf.possibleEntries.push( {name: "Icelandic", list: icelandic_ } );
+  gf.possibleEntries.push( {name: "Dutch", list: dutch_ } );
 
   console.log(gf.possibleEntries);
 
@@ -114,20 +116,60 @@ function makeWindowAtCenter(url, title, w, h)
     return newWindow;
 }
 
-function getCheckedEntries(evidence)
+function getCheckedEntries(t,start,column)
 {
-  t = evidence.getElementById("evidenceTable");
-
   var entries = [];
 
-  for (var i=0,row;row=t.rows[i];i++)
+  for (var i=start,row;row=t.rows[i];i++)
   {
-    var c = row.cells[1];
+    var c = row.cells[column];
     var j = row.cells[0];
+    if (j.children[0]==undefined) continue;
     if (j.children[0].checked)
-      entries.push(c.innerHTML);
+    {
+      var text = c.innerHTML.split(',');
+      for (var k in text)
+      {
+        // split c at commas
+        entries.push(text[k]);
+      }
+    }
   }
   return entries;
+}
+
+function getCheckedRows(t,start,column)
+{
+  var rows = [];
+
+  for (var i=start,row;row=t.rows[i];i++)
+  {
+    var c = row.cells[column];
+    var j = row.cells[0];
+    if (j.children[0]==undefined) continue;
+    if (j.children[0].checked)
+    {
+      rows.push(row.cells[column].innerHTML.split(','));
+    }
+  }
+  return rows;
+}
+
+function submitEvidenceEntry(evidence,doc)
+{
+  var plotOnSubmit = false;
+  if (plotOnSubmit)
+    updateCountries(doc.getElementById("evidenceTable"),0,1);
+
+  var evidenceType = doc.getElementById("evidenceType");
+  var type = evidenceType[evidenceType.selectedIndex].text; // or use evidence.type
+
+  // get the checked entries
+  var entries = getCheckedEntries(doc.getElementById("evidenceTable"),0,1);
+
+  var reason = prompt("Enter a reason"); // or use evidence.name
+  makeGuideEntry(type,entries,reason,evidence.img);
+
 }
 
 function makeSubmitButton(evidence,doc)
@@ -140,7 +182,7 @@ function makeSubmitButton(evidence,doc)
   submit.style.display = "block";
   doc.body.appendChild(submit);
 
-  submit.onclick = function() { updateCountries(doc); };
+  submit.onclick = function() { submitEvidenceEntry(evidence,doc); };
 
   updateMap();
 }
@@ -150,10 +192,7 @@ function researchSelection(doc,info)
   var research = doc.getElementById('researchDropdown');
   var idx = research.selectedIndex;
 
-  console.log(idx);
-
   var link = info[idx].link;
-  console.log(link);
   makeWindowAtCenter(link,info[idx].name,600,600);
 }
 
@@ -178,8 +217,6 @@ function makeResearchButton(data,doc)
     research.appendChild(option);
   }
 
-  //research.onchange = function() { researchSelection(doc,info) };
-
   span.appendChild(research);
 
   var button = doc.createElement('button');
@@ -193,9 +230,6 @@ function makeResearchButton(data,doc)
   span.appendChild(button);
 
   doc.body.appendChild(span);
-
-
-//  research.onclick = function() { openResearchTab(data,doc); };
 }
 
 function makeEvidenceWindow(id,data)
@@ -203,6 +237,17 @@ function makeEvidenceWindow(id,data)
   var evidence = makeWindowAtCenter("","_blank",data.size[0],data.size[1]); //window.open("","evidence","width=200,height=200");
 
   evidence.document.title = "Evidence";
+
+  var select = evidence.document.createElement('select');
+  select.id  = "evidenceType";
+  var evidenceTypes = ["Linguistic","Religious","Geologic","Climate","Economic"];
+  for (var i in evidenceTypes)
+  {
+    var option = evidence.document.createElement('option');
+    option.innerHTML = evidenceTypes[i];
+    select.appendChild(option);
+  }
+  evidence.document.body.appendChild(select);
 
   fillEvidence(evidence.document,data);
 

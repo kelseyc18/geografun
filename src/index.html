@@ -51,6 +51,8 @@
 
     <!-- load countries by evidence type -->
     <script type="text/javascript" src="images/countries/hinduism.json"></script>
+    <script type="text/javascript" src="images/countries/islam.json"></script>
+    <script type="text/javascript" src="images/countries/languages.json"></script>
   </head>
 
   <body onload="">
@@ -66,7 +68,7 @@
     <!-- add the logbook a.k.a. guide -->
     <div id="logbook" style="float:left; background: grey">
       <table id="guide">
-        <thead><tr><th>Field guide</th></tr></thead>
+        <thead><th></th></thead>
       </table>
     </div>
 
@@ -77,6 +79,7 @@
     <!-- create the viewer holding the image -->
     <div>
       <div id="arrowleft" onclick="leftArrowClicked();"></div>
+      <div id="arrowfill"></div>
       <div id="arrowright" onclick="rightArrowClicked();"></div>
       <div id="viewframe" style="float:center; border: 0px; padding: 0px; margin: 0 0 0 0;">
         <div id="play" onclick="gfStart()"></div>

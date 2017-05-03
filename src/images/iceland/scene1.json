@@ -3,6 +3,8 @@ iceland.scene[0] = {
   "clues": [
      {
        "tag": "iceland_clue1",
+       "name": "sign",
+       "img": null,
         "position": [10,25,10,20],
         "data":
         {
@@ -20,6 +22,8 @@ iceland.scene[0] = {
      },
      {
        "tag": "iceland_clue2",
+       "name": "building",
+       "img": null,
        "position": [53,7,5,20],
        "data":
        {
