@@ -9,18 +9,45 @@ function makeGuideEntry(field,conclusion,reason,imgsrc)
   var why  = row.insertCell(3);
   var img = row.insertCell(4);
 
+  // set the row data
   cbox.innerHTML = "<input type='checkbox'></input>";
   type.innerHTML = field;
   text.innerHTML = conclusion;
   why.innerHTML = reason;
-  img.innerHTML = "<a href="+imgsrc+">img</a>";
+
+  // image column, open in new tab (hence target='_blank');
+  img.innerHTML = "<a target='_blank' href="+imgsrc+">img</a>";
 
   cbox.onclick = function() {updateCountries();};
 }
 
-function updateCountries()
+function guideHasCountry(c)
+{
+  for (var i in gf.guide.countries)
+  {
+    if (gf.guide.countries[i]==c) return true;
+  }
+  return false;
+}
+
+function updateCountries(evidence)
 {
   // compute the intersection of the current list with the ones from this clue
   // load them and plot
-  console.log("hello");
+  var countries = getCheckedCountries(evidence);
+  var newCountries = [];
+  for (var i in countries)
+  {
+    if (guideHasCountry(countries[i]))
+    {
+      newCountries.push(countries[i]);
+    }
+  }
+
+  // TODO: convert result to countries (i.e. hinduism is not a country :P)
+  gf.guide.countries = newCountries;
+  gf.highlighted = countries;
+
+  console.log(gf.highlighted);
+
 }

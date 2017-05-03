@@ -9,6 +9,10 @@ function gfStart()
   if (play!=undefined)
     viewer.removeChild( document.getElementById('play') );
 
+  // initialize the countries in the guide
+  gf.guide = {};
+  gf.guide.countries = [];
+
   // set the image counter and default location (optionally set a new location)
   gfSetLocation();
   gfSetImage();
@@ -63,6 +67,7 @@ function fillEvidence(doc,data)
     // display the list as radio boxes
     // make a table
     var t = doc.createElement('table');
+    t.id = "evidenceTable";
     list = data.list;
 
     for (i in list)
@@ -100,6 +105,22 @@ function makeWindowAtCenter(url, title, w, h) {
     return newWindow;
 }
 
+function getCheckedCountries(evidence)
+{
+  t = evidence.getElementById("evidenceTable");
+
+  var countries = [];
+
+  for (var i=0,row;row=t.rows[i];i++)
+  {
+    var c = row.cells[1];
+    var j = row.cells[0];
+    if (j.children[0].checked)
+      countries.push(c.innerHTML);
+  }
+  return countries;
+}
+
 function makeSubmitButton(doc)
 {
   // create a submit button for evidence windows
@@ -110,7 +131,7 @@ function makeSubmitButton(doc)
   submit.style.display = "block";
   doc.body.appendChild(submit);
 
-
+  submit.onclick = function() { updateCountries(doc); };
   map.series.regions[0].setValues(generateColours());
 }
 
