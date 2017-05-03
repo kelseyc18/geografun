@@ -17,10 +17,18 @@ function gfStart()
   gfSetLocation();
   gfSetImage();
 
-  // these should be in different functions
-  gf.highlighted = ["Canada","Russia","Cuba","Belgium"];
+  // initialize highlighted countries to be empty
+  gf.highlighted = [];
+
+  // this should be elsewhere
   makeGuideEntry("linguistic","latin","street sign","images/arrow.png");
   makeGuideEntry("religious","christian","church","images/arrow.png");
+
+  // load the possible entries
+  gf.possibleEntries = [];
+  gf.possibleEntries.push( {name: "Hinduism", list: hinduism_ } );
+
+  console.log(gf.possibleEntries);
 
 }
 
@@ -87,7 +95,8 @@ function fillEvidence(doc,data)
 
 // function to make a window centered on screen
 // supports dual screen configuration
-function makeWindowAtCenter(url, title, w, h) {
+function makeWindowAtCenter(url, title, w, h)
+{
     var dualScreenLeft = window.screenLeft != undefined ? window.screenLeft : screen.left;
     var dualScreenTop = window.screenTop != undefined ? window.screenTop : screen.top;
 
@@ -105,23 +114,23 @@ function makeWindowAtCenter(url, title, w, h) {
     return newWindow;
 }
 
-function getCheckedCountries(evidence)
+function getCheckedEntries(evidence)
 {
   t = evidence.getElementById("evidenceTable");
 
-  var countries = [];
+  var entries = [];
 
   for (var i=0,row;row=t.rows[i];i++)
   {
     var c = row.cells[1];
     var j = row.cells[0];
     if (j.children[0].checked)
-      countries.push(c.innerHTML);
+      entries.push(c.innerHTML);
   }
-  return countries;
+  return entries;
 }
 
-function makeSubmitButton(doc)
+function makeSubmitButton(evidence,doc)
 {
   // create a submit button for evidence windows
   var submit = doc.createElement("BUTTON");
@@ -132,20 +141,73 @@ function makeSubmitButton(doc)
   doc.body.appendChild(submit);
 
   submit.onclick = function() { updateCountries(doc); };
-  map.series.regions[0].setValues(generateColours());
+
+  updateMap();
 }
 
-function makeEvidenceWindow(data)
+function researchSelection(doc,info)
 {
-  console.log(data);
-  var evidence = makeWindowAtCenter("","evidence",data.size[0],data.size[1]); //window.open("","evidence","width=200,height=200");
+  var research = doc.getElementById('researchDropdown');
+  var idx = research.selectedIndex;
+
+  console.log(idx);
+
+  var link = info[idx].link;
+  console.log(link);
+  makeWindowAtCenter(link,info[idx].name,600,600);
+}
+
+function makeResearchButton(data,doc)
+{
+
+  var span = doc.createElement('span');
+
+  // create a submit button for evidence windows
+  var research = doc.createElement('select');
+  research.id = 'researchDropdown';
+
+  var info = data.research;
+
+  research.innerHTML = "Research";
+
+  for (var i in info)
+  {
+    var r = info[i];
+    var option = doc.createElement('option');
+    option.innerHTML = r.name;
+    research.appendChild(option);
+  }
+
+  //research.onchange = function() { researchSelection(doc,info) };
+
+  span.appendChild(research);
+
+  var button = doc.createElement('button');
+  button.innerHTML = "research";
+  button.style.width = "100px";
+  button.style.height = "20px";
+  button.style.display = "block";
+
+  button.onclick = function() {researchSelection(doc,info); };
+
+  span.appendChild(button);
+
+  doc.body.appendChild(span);
+
+
+//  research.onclick = function() { openResearchTab(data,doc); };
+}
+
+function makeEvidenceWindow(id,data)
+{
+  var evidence = makeWindowAtCenter("","_blank",data.size[0],data.size[1]); //window.open("","evidence","width=200,height=200");
 
   evidence.document.title = "Evidence";
 
   fillEvidence(evidence.document,data);
 
-  makeSubmitButton(evidence.document);
-
+  makeSubmitButton(data,evidence.document);
+  makeResearchButton(data,evidence.document);
 }
 
 // function returning boolean if a country should be highlighted

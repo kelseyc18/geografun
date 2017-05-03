@@ -38,3 +38,8 @@ $(function() {
   // set the map colours
   map.series.regions[0].setValues(generateColours());
 })
+
+function updateMap()
+{
+  map.series.regions[0].setValues(generateColours());
+}

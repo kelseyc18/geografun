@@ -17,7 +17,7 @@ function makeClue(clue)
   box.style.display = "block";
 
   // when clue is clicked, open an evidence window
-  box.onclick = function() { makeEvidenceWindow(clue.data); };
+  box.onclick = function() { makeEvidenceWindow(clue.tag,clue.data); };
 
   // add the clue as a child to the viewer frame
   viewer.appendChild(box);

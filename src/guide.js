@@ -30,24 +30,38 @@ function guideHasCountry(c)
   return false;
 }
 
+function entryToCountryList(entry)
+{
+  for (var i in gf.possibleEntries)
+  {
+    if (gf.possibleEntries[i].name==entry)
+      return gf.possibleEntries[i].list;
+  }
+  return undefined;
+}
+
 function updateCountries(evidence)
 {
   // compute the intersection of the current list with the ones from this clue
   // load them and plot
-  var countries = getCheckedCountries(evidence);
+  var entries = getCheckedEntries(evidence);
   var newCountries = [];
-  for (var i in countries)
+  for (var i in entries)
   {
-    if (guideHasCountry(countries[i]))
+    var countries = entryToCountryList(entries[i]);
+    for (var j in countries)
     {
-      newCountries.push(countries[i]);
+      if (guideHasCountry(countries[j]))
+      {
+        newCountries.push(countries[j]);
+      }
     }
   }
 
-  // TODO: convert result to countries (i.e. hinduism is not a country :P)
   gf.guide.countries = newCountries;
   gf.highlighted = countries;
 
-  console.log(gf.highlighted);
+  //console.log(gf.highlighted);
 
+  updateMap();
 }

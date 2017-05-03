@@ -7,18 +7,14 @@ iceland.scene[0] = {
         "data":
         {
           "type": "language",
-          "size": [200,250],
+          "size": [300,300],
           "text": "What languages might be present?",
           "list": ["English","Spanish","German","Swedish","Icelandic","Hebrew","Japanese"],
           "research":
-          {
-            "text": "look at these links",
-            "links":
             [
-              {"name": "latin" , "link": "wikipedia.com" },
-              {"name": "cyrillic" , "link": "wikipedia.com" }
+              {"name": "latin" , "link": "https://en.wikipedia.org/wiki/Latin" },
+              {"name": "cyrillic" , "link": "https://en.wikipedia.org/wiki/Cyrillic_script" }
             ]
-          }
         },
         "symbol": "none"
      },
@@ -28,14 +24,16 @@ iceland.scene[0] = {
        "data":
        {
          "type": "religious",
-         "size": [200,200],
+         "size": [300,300],
          "text": "what is the dominant religion associated with this building?",
          "list": ["Christianity", "Judaism", "Islam","Hinduism"],
          "image": null,
          "buttons": null,
          "research":
-         {
-         }
+           [
+             {"name": "christianity" , "link": "https://en.wikipedia.org/wiki/Christianity" },
+             {"name": "hinduism" , "link": "https://en.wikipedia.org/wiki/Hinduism" }
+           ]
        },
        "symbol": "none"
      }
