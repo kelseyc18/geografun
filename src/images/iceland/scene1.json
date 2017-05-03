@@ -4,7 +4,7 @@ iceland.scene[0] = {
      {
        "tag": "iceland_clue1",
        "name": "sign",
-       "img": null,
+       "img": "images/mickeymouse.jpg",
         "position": [10,25,10,20],
         "data":
         {
@@ -12,6 +12,7 @@ iceland.scene[0] = {
           "size": [300,300],
           "text": "What languages might be present?",
           "list": ["English","Spanish","German","Swedish","Icelandic","Hebrew","Japanese"],
+          "img": "images/mickeymouse.jpg",
           "research":
             [
               {"name": "latin" , "link": "https://en.wikipedia.org/wiki/Latin" },
@@ -23,7 +24,7 @@ iceland.scene[0] = {
      {
        "tag": "iceland_clue2",
        "name": "building",
-       "img": null,
+       "img": "images/mickeymouse.jpg",
        "position": [53,7,5,20],
        "data":
        {
@@ -31,8 +32,7 @@ iceland.scene[0] = {
          "size": [300,300],
          "text": "what is the dominant religion associated with this building?",
          "list": ["Christianity", "Judaism", "Islam","Hinduism"],
-         "image": null,
-         "buttons": null,
+         "img": "images/mickeymouse.jpg",
          "research":
            [
              {"name": "christianity" , "link": "https://en.wikipedia.org/wiki/Christianity" },

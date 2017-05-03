@@ -168,6 +168,8 @@ function submitEvidenceEntry(evidence,doc)
   var entries = getCheckedEntries(doc.getElementById("evidenceTable"),0,1);
 
   var reason = prompt("Enter a reason"); // or use evidence.name
+  console.log(evidence);
+  console.log(evidence.img);
   makeGuideEntry(type,entries,reason,evidence.img);
 
 }
