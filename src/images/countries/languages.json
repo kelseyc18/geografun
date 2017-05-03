@@ -47,6 +47,27 @@ var icelandic_ =
 
 var dutch_ = 
 [
-	"Holland",
+	"Netherlands",
 	"Belgium"
+];
+
+var german_ =
+[
+	"Germany",
+	"Switzerland"
+];
+
+var swedish_ =
+[
+	"Sweden"
+];
+
+var hebrew_ =
+[
+	"Israel"
+];
+
+var japanese_ =
+[
+	"Japan"
 ];

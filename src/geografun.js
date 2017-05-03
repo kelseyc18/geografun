@@ -24,11 +24,20 @@ function gfStart()
   gf.possibleEntries = [];
   gf.possibleEntries.push( {name: "Hinduism", list: hinduism_ } );
   gf.possibleEntries.push( {name: "Islam", list: islam_ } );
+  gf.possibleEntries.push( {name: "Christianity", list: christianity_ } );
+  gf.possibleEntries.push( {name: "Judaism", list: judaism_ } );
+
   gf.possibleEntries.push( {name: "English", list: english_ } );
   gf.possibleEntries.push( {name: "Spanish", list: spanish_ } );
   gf.possibleEntries.push( {name: "French", list: french_ } );
   gf.possibleEntries.push( {name: "Icelandic", list: icelandic_ } );
   gf.possibleEntries.push( {name: "Dutch", list: dutch_ } );
+  gf.possibleEntries.push( {name: "German", list: german_ } );
+  gf.possibleEntries.push( {name: "Swedish", list: swedish_ } );
+  gf.possibleEntries.push( {name: "Christianity", list: christianity_ } );
+  gf.possibleEntries.push( {name: "Hebrew", list: hebrew_ } );
+  gf.possibleEntries.push( {name: "Japanese", list: japanese_ } );
+
 
   console.log(gf.possibleEntries);
 

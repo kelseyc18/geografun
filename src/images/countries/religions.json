@@ -1,0 +1,35 @@
+var hinduism_ =
+[
+  "India",
+  "Nepal",
+  "Bangladesh",
+  "Indonesia",
+  "Pakistan",
+  "Sri Lanka",
+  "United States",
+  "Malaysia",
+  "Myanmar",
+  "United Kingdom"
+];
+
+var islam_ =
+[
+  "Indonesia", 
+  "Sri Lanka",
+  "United States",
+  "Malaysia",
+  "United Kingdom"
+];
+
+var christianity_ =
+[
+	"United States"
+];
+
+var judaism_ =
+[
+	"United States",
+	"Canada",
+	"Israel",
+	"Ethiopia"
+];
