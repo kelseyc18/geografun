@@ -2,28 +2,47 @@ iceland.scene[0] = {
   "name": "scene1",
   "clues": [
      {
-        "position": [80,90,70,50],
+       "tag": "iceland_clue1",
+        "position": [10,25,10,20],
         "data":
         {
           "type": "language",
-          "size": [200,400],
+          "size": [200,250],
           "text": "What languages might be present?",
-          "list": ["English","Spanish","German","Swedish","Icelandic","Hebrew","Japanese"]
+          "list": ["English","Spanish","German","Swedish","Icelandic","Hebrew","Japanese"],
+          "research":
+          {
+            "text": "look at these links",
+            "links":
+            [
+              {"name": "latin" , "link": "wikipedia.com" },
+              {"name": "cyrillic" , "link": "wikipedia.com" }
+            ]
+          }
         },
         "symbol": "none"
      },
      {
-       "position": [405,20,20,60],
+       "tag": "iceland_clue2",
+       "position": [53,7,5,20],
        "data":
        {
          "type": "religious",
-         "size": [200,400],
+         "size": [200,200],
          "text": "what is the dominant religion associated with this building?",
          "list": ["Christianity", "Judaism", "Islam","Hinduism"],
          "image": null,
-         "buttons": null
+         "buttons": null,
+         "research":
+         {
+         }
        },
        "symbol": "none"
      }
   ]
 }
+
+iceland.scene[1] = {};
+iceland.scene[2] = {};
+
+iceland.nscene = 2;

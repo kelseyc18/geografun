@@ -4,6 +4,8 @@
 <html id="mainBody">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <style> body {font-family: Ubuntu, sans-serif; } </style>
+    <link rel="stylesheet" type="text/css" href="geografun.css" />
 
     <title>
       geografun
@@ -11,16 +13,21 @@
 
     <link rel="shortcut icon" href="images/favicon.ico">
 
+    <!-- global variables -->
     <script>
       var totalSeconds;
       var timer;
-      var gf = {};  // object to store "globals"
+      var gf = {};
     </script>
 
+    <!-- load scripts -->
     <script type="text/javascript" src="geografun.js"> </script>
     <script type="text/javascript" src="guide.js"> </script>
+    <script type="text/javascript" src="clues.js"> </script>
+    <script type="text/javascript" src="events.js"> </script>
     <script type="text/javascript" src="timer.js"> </script>
 
+    <!-- third-party libraries -->
     <script type="text/javascript" src="third_party/jquery.js"> </script>
     <link rel="stylesheet" href="third_party/jquery-jvectormap-2.0.3.css" type="text/css" media="screen"/>
     <script src="third_party/jquery-jvectormap-2.0.3.min.js"></script>
@@ -41,76 +48,38 @@
 
     <!-- load possible locations and scenes -->
     <script type="text/javascript" src="images/iceland/scene1.json"></script>
-
-    <link rel="stylesheet" type="text/css" href="geografun.css" />
-
   </head>
 
   <body onload="">
 
+    <!-- create the timer -->
+    <div id='timer' style="width: 75%; float:left">
+    <script type="text/javascript">window.onload = CreateTimer('timer',1000);</script>
+    </div>
+    <div id="clicksCounter" style="width:25%; float:right">
+      <b>Remaining clicks: 10</b>
+    </div>
+
+    <!-- add the logbook a.k.a. guide -->
     <div id="logbook" style="float:left; background: grey">
-      <table id="guide"><thead><tr><th></th><th>Field guide</th></tr>
+      <table id="guide">
+        <thead><tr><th>Field guide</th></tr></thead>
       </table>
     </div>
-    <!-- <div id="mapframe" style="float:left"> </div> -->
-    <div id="map" style="width: 45%; height: 200px;float: left; border:5px;padding:10px;margin: 5px 5px 5px 5px"></div>
-    <script>
-    $(function(){
-     var palette = ['#66C2A5', '#FC8D62', '#8DA0CB', '#E78AC3', '#A6D854'];
-         generateColors = function(){
-           var colors = {},
-               key;
 
-           for (key in map.regions) {
-             if (gfHighlighted( map.regions[key].config.name ) )
-              colors[key] = palette[0];//palette[Math.floor(Math.random()*palette.length)];
-            else {
-              colors[key] = palette[1];
-            }
-           }
-           return colors;
-         },
-         map;
+    <!-- add the map -->
+    <div id="map"></div>
+    <script type="text/javascript" src="map.js"></script>
 
-     map = new jvm.Map({
-       map: 'world_mill',
-       container: $('#map'),
-       series: {
-         regions: [{
-           attribute: 'fill'
-         }]
-       }
-     });
-     map.series.regions[0].setValues(generateColors());
-   })
-      /*  $(function(){
-        $('#world-map').vectorMap({map: 'world_mill'});
-      });*/
-  </script>
-
-    <p>
-    <div id="viewframe" style="float:left">
-      <div id="play" onclick="gfStart()"></div>
+    <!-- create the viewer holding the image -->
+    <div>
+      <div id="arrowleft" onclick="leftArrowClicked();"></div>
+      <div id="arrowright" onclick="rightArrowClicked();"></div>
+      <div id="viewframe" style="float:center; border: 0px; padding: 0px; margin: 0 0 0 0;">
+        <div id="play" onclick="gfStart()"></div>
+      </div>
     </div>
-    </p>
 
-    <div id='timer'/>
-    <script type="text/javascript">window.onload = CreateTimer("timer",1000);</script>
-
-    <script type="text/javascript">
-
-    /*var map;
-    var loc;
-
-    function initMap()
-    {
-      loc = {lat: 0, lng: 0 };
-      map = new google.maps.Map(document.getElementById('mapframe') , { zoom: 1, center: loc, streetViewControl: false, maxZoom: 5 } );
-    }*/
-    </script>
-  <!-- load google maps api -->
-  <!--<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBmD-NeYlwCblBy5Rzp_WNY6ktOQ_DY6gY&callback=initMap"> </script>
-  -->
   </body>
 
 </html>

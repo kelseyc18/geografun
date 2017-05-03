@@ -1,99 +1,54 @@
 function gfStart()
 {
 
+  // viewer frame holding the scene window
   viewer = document.getElementById('viewframe');
 
-  // remove the 'play' child from the viewer
-  viewer.removeChild( document.getElementById('play') );
-
-  // figure out a location
-
-  // set the first image
-
-
-//  viewer.style.backgroundImage = "url('images/iceland/img1.png')";
+  // remove the 'play' child from the viewer if it exists
+  var play = document.getElementById('play');
+  if (play!=undefined)
+    viewer.removeChild( document.getElementById('play') );
 
   // set the image counter and default location (optionally set a new location)
-  gf.imageCounter = 1;
-  gf.location = gfRandomLocation();
+  gfSetLocation();
   gfSetImage();
 
-  makeGuideEntry();
-  makeGuideEntry();
+  // these should be in different functions
+  gf.highlighted = ["Canada","Russia","Cuba","Belgium"];
+  makeGuideEntry("linguistic","latin","street sign","images/arrow.png");
+  makeGuideEntry("religious","christian","church","images/arrow.png");
 
 }
 
-function gfRandomLocation()
+function gfSetLocation()
 {
-  return "iceland";
-}
-
-function gfAddArrow(left=false)
-{
-  viewer = document.getElementById('viewframe');
-
-  var ar = document.createElement('div');
-  if (left)
-    ar.id = 'arrowleft';
-  else
-    ar.id = 'arrowright';
-  ar.style.background = "url('images/arrow.png') right center no-repeat";
-  if (left)
-  {
-    ar.style.webkitTransform = "rotate(180deg)";
-    ar.style.bottom = "50px";
-  }
-  ar.style.backgroundSize = "contain";
-  ar.style.position = "relative";
-  ar.style.height = "50px";
-  ar.style.zIndex = 10;
-//  ar.style.bottom = "-50px";
-
-  viewer.appendChild(ar);
+  // set a 'random' location
+  // here we only use iceland
+  gf.imageCounter = 0;
+  gf.location = "iceland";
+  gf.nscene = iceland.nscene;
+  gf.scene = iceland.scene;
 }
 
 function gfSetImage()
 {
-  viewer.style.backgroundImage = "url('images/"+gf.location+"/img"+gf.imageCounter.toString()+".png";
-  viewer.style.backgroundSize = "cover";
+  // set the current image from location and current scene number
+  viewer.style.backgroundImage = "url('images/"+gf.location+"/img"+gf.imageCounter.toString()+".png')";
+  viewer.style.backgroundSize = "100% 100%";
+  viewer.style.backgroundPosition = "0px 0px";
+  viewer.backgroundOrigin = "content-box";
+  viewer.style.backgroundRepeat = "no-repeat";
 
-  gf.currentClues = iceland.scene[0];
-  console.log(gf.currentClues.clues);
-
+  // get the current set of clues and lay them on the image
+  gf.currentClues = gf.scene[gf.imageCounter];
   gfLayClues(gf.currentClues.clues);
-
-  gfAddArrow(false);
-  gfAddArrow(true);
-
-}
-
-function makeClue(clue)
-{
-  var viewer = document.getElementById('viewframe');
-
-  var box = document.createElement('div');
-  box.style.border = "1px solid red";
-  box.style.position = "relative";
-  box.style.width = clue.position[2]+"px";
-  box.style.height = clue.position[3]+"px";
-  box.style.zIndex = 1;
-
-  box.style.left = clue.position[0]+"px";
-  box.style.top = clue.position[1]+"px";
-  box.style.display = "block";
-
-  box.onclick = function() { makeEvidenceWindow(clue.data); };
-  //box.data = clue.data;
-
-  // set onclick function for clue
-  //setEvidenceWindow(box,clue.data);
-
-  viewer.appendChild(box);
 
 }
 
 function fillEvidence(doc,data)
 {
+  doc.body.style.fontFamily = 'Ubuntu, sans-serif';
+
   text = doc.createElement("p");
   text.innerHTML = data.text;
   doc.body.appendChild(text);
@@ -125,8 +80,9 @@ function fillEvidence(doc,data)
   }
 }
 
+// function to make a window centered on screen
+// supports dual screen configuration
 function makeWindowAtCenter(url, title, w, h) {
-    // Fixes dual-screen position                         Most browsers      Firefox
     var dualScreenLeft = window.screenLeft != undefined ? window.screenLeft : screen.left;
     var dualScreenTop = window.screenTop != undefined ? window.screenTop : screen.top;
 
@@ -146,19 +102,16 @@ function makeWindowAtCenter(url, title, w, h) {
 
 function makeSubmitButton(doc)
 {
+  // create a submit button for evidence windows
   var submit = doc.createElement("BUTTON");
   submit.innerHTML = "submit";
-
   submit.style.width = "50px";
   submit.style.height = "20px";
-  submit.style.display = "block"; // for centering
-
-
+  submit.style.display = "block";
   doc.body.appendChild(submit);
 
-  gf.highlighted = ["Canada","Russia","Cuba","Belgium"];
 
-  map.series.regions[0].setValues(generateColors());
+  map.series.regions[0].setValues(generateColours());
 }
 
 function makeEvidenceWindow(data)
@@ -174,15 +127,7 @@ function makeEvidenceWindow(data)
 
 }
 
-function gfLayClues(clues)
-{
-  for (i in clues)
-  {
-    var clue = clues[i];
-    makeClue(clue);
-  }
-}
-
+// function returning boolean if a country should be highlighted
 function gfHighlighted(country)
 {
   for (i in gf.highlighted)

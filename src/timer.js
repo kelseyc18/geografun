@@ -30,7 +30,7 @@ function UpdateTimer() {
   var Minutes = Math.floor(Seconds / 60);
   Seconds -= Minutes * (60);
 
-  var TimeStr = ((Days > 0) ? Days + " days " : "") + LeadingZero(Hours) + ":" + LeadingZero(Minutes) + ":" + LeadingZero(Seconds);
+  var TimeStr = "<b>Remaining time: </b>" +((Days > 0) ? Days + " days " : "") + LeadingZero(Hours) + ":" + LeadingZero(Minutes) + ":" + LeadingZero(Seconds);
   Timer.innerHTML = TimeStr;
 }
 
