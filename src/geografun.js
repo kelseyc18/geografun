@@ -37,8 +37,31 @@ function gfStart()
   gf.possibleEntries.push( {name: "Hebrew", list: hebrew_ } );
   gf.possibleEntries.push( {name: "Japanese", list: japanese_ } );
 
+  var eog = document.getElementById("eog");
+  var select = document.createElement('select');
+  select.id = "selectEOG";
+  var countries = getAllCountries();
+  for (var i in countries)
+  {
+    var option = document.createElement('option');
+    option.text = countries[i];
+    select.appendChild(option);
+  }
+  eog.appendChild(select);
 
-  console.log(gf.possibleEntries);
+  var makeAGuess = document.createElement('button');
+  makeAGuess.id = "makeAGuess";
+  makeAGuess.innerHTML = "guess!";
+  makeAGuess.onclick = function() { checkIfCorrect() };
+
+  var nclicks = document.getElementById("numberOfClicks");
+  gf.nclicks = 20;
+  nclicks.innerHTML = gf.nclicks.toString();
+
+  //ar viewframe = document.getElementById("viewframe");
+  viewer.onclick = function() { adjustClicks(); };
+
+  document.body.appendChild(makeAGuess);
 
 }
 
@@ -54,15 +77,16 @@ function gfSetLocation()
 
 function gfSetImage()
 {
+  gf.imageNumber = gf.imageCounter % gf.nscene;
   // set the current image from location and current scene number
-  viewer.style.backgroundImage = "url('images/"+gf.location+"/img"+gf.imageCounter.toString()+".png')";
+  viewer.style.backgroundImage = "url('images/"+gf.location+"/img"+gf.imageNumber.toString()+".png')";
   viewer.style.backgroundSize = "100% 100%";
   viewer.style.backgroundPosition = "0px 0px";
   viewer.backgroundOrigin = "content-box";
   viewer.style.backgroundRepeat = "no-repeat";
 
   // get the current set of clues and lay them on the image
-  gf.currentClues = gf.scene[gf.imageCounter];
+  gf.currentClues = gf.scene[gf.imageNumber];
   gfLayClues(gf.currentClues.clues);
 
 }
@@ -127,28 +151,6 @@ function makeWindowAtCenter(url, title, w, h)
     return newWindow;
 }
 
-function getCheckedEntries(t,start,column)
-{
-  var entries = [];
-
-  for (var i=start,row;row=t.rows[i];i++)
-  {
-    var c = row.cells[column];
-    var j = row.cells[0];
-    if (j.children[0]==undefined) continue;
-    if (j.children[0].checked)
-    {
-      var text = c.innerHTML.split(',');
-      for (var k in text)
-      {
-        // split c at commas
-        entries.push(text[k]);
-      }
-    }
-  }
-  return entries;
-}
-
 function getCheckedRows(t,start,column)
 {
   var rows = [];
@@ -176,7 +178,8 @@ function submitEvidenceEntry(evidence,doc)
   var type = evidenceType[evidenceType.selectedIndex].text; // or use evidence.type
 
   // get the checked entries
-  var entries = getCheckedEntries(doc.getElementById("evidenceTable"),0,1);
+  //var entries = getCheckedEntries(doc.getElementById("evidenceTable"),0,1);
+  var entries = getCheckedRows(doc.getElementById("evidenceTable"),0,1);
 
   var reason = prompt("Enter a reason"); // or use evidence.name
   makeGuideEntry(type,entries,reason,evidence.img);
@@ -278,4 +281,48 @@ function gfHighlighted(country)
       return true;
   }
   return false;
+}
+
+function onlyUnique(value, index, self)
+{
+    return self.indexOf(value) === index;
+}
+
+function getAllCountries()
+{
+  var countries = [];
+  for (i in gf.possibleEntries)
+  {
+    var clist = gf.possibleEntries[i].list;
+    for (var j in clist)
+    {
+      countries.push( clist[j] );
+    }
+  }
+  return countries.filter(onlyUnique);
+}
+
+function checkIfCorrect()
+{
+  var select = document.getElementById("selectEOG");
+  var guess = select.value;
+  if (gf.location==guess.toLowerCase())
+    alert("correct!");
+  else
+  {
+    alert("wrong!");
+    location.reload();
+  }
+}
+
+function adjustClicks()
+{
+  if (gf.nclicks==1)
+  {
+    alert("too many clicks!");
+    location.reload();
+  }
+  gf.nclicks--;
+  var nclicks = document.getElementById("numberOfClicks");
+  nclicks.innerHTML = gf.nclicks.toString();
 }

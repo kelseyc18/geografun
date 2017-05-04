@@ -38,7 +38,7 @@
       var iceland = {};
       var greece = {};
 
-      iceland.nscene = 1;
+      iceland.nscene = 2;
       greece.nscene  = 0;
 
       iceland.scene = Array(iceland.nscene);
@@ -62,7 +62,8 @@
     <script type="text/javascript">window.onload = CreateTimer('timer',1000);</script>
     </div>
     <div id="clicksCounter" style="width:25%; float:right">
-      <b>Remaining clicks: 10</b>
+      <b>Remaining clicks:</b>
+      <b id="numberOfClicks"></b>
     </div>
 
     <!-- add the logbook a.k.a. guide -->
@@ -79,13 +80,17 @@
     <!-- create the viewer holding the image -->
     <div>
       <div id="arrowleft" onclick="leftArrowClicked();"></div>
-      <div id="arrowleft_description" onclick="leftArrowClicked();">Previous Scene</div>
+      <div style="width: 10%; float:left" onclick="leftArrowClicked();">previous scene</div>
       <div id="arrowfill"></div>
+      <div style="width: 10%; float:left" onclick="leftArrowClicked();">next scene</div>
       <div id="arrowright" onclick="rightArrowClicked();"></div>
-      <div id="arrowright_description" onclick="rightArrowClicked();">Next Scene</div>
       <div id="viewframe" style="float:center; border: 0px; padding: 0px; margin: 0 0 0 0;">
         <div id="play" onclick="gfStart()"></div>
       </div>
+    </div>
+
+    <!-- create the guess dropdown -->
+    <div id="eog">
     </div>
 
   </body>
