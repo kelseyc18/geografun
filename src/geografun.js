@@ -249,6 +249,8 @@ function makeEvidenceWindow(id,data)
 
   evidence.document.title = "Evidence";
 
+  var evidenceTypeDiv = evidence.document.createElement('div');
+  evidenceTypeDiv.innerHTML = "What type of evidence is this?";
   var select = evidence.document.createElement('select');
   select.id  = "evidenceType";
   var evidenceTypes = ["Linguistic","Religious","Geologic","Climate","Economic"];
@@ -258,6 +260,7 @@ function makeEvidenceWindow(id,data)
     option.innerHTML = evidenceTypes[i];
     select.appendChild(option);
   }
+  evidence.document.body.appendChild(evidenceTypeDiv);
   evidence.document.body.appendChild(select);
 
   fillEvidence(evidence.document,data);
