@@ -34,7 +34,6 @@ function gfStart()
   gf.possibleEntries.push( {name: "Dutch", list: dutch_ } );
   gf.possibleEntries.push( {name: "German", list: german_ } );
   gf.possibleEntries.push( {name: "Swedish", list: swedish_ } );
-  gf.possibleEntries.push( {name: "Christianity", list: christianity_ } );
   gf.possibleEntries.push( {name: "Hebrew", list: hebrew_ } );
   gf.possibleEntries.push( {name: "Japanese", list: japanese_ } );
 
@@ -76,11 +75,6 @@ function fillEvidence(doc,data)
   text.innerHTML = data.text;
   doc.body.appendChild(text);
 
-  if (data.image!=null)
-  {
-    // display the image
-  }
-
   if (data.list!=null)
   {
     // display the list as radio boxes
@@ -101,6 +95,14 @@ function fillEvidence(doc,data)
     }
     doc.body.appendChild(t);
 
+  }
+
+  if (data.img!=null)
+  {
+    // display the image
+    var img = doc.createElement('img');
+    img.src = data.img;
+    img.style.display = 'inline-block';
   }
 }
 
@@ -177,8 +179,6 @@ function submitEvidenceEntry(evidence,doc)
   var entries = getCheckedEntries(doc.getElementById("evidenceTable"),0,1);
 
   var reason = prompt("Enter a reason"); // or use evidence.name
-  console.log(evidence);
-  console.log(evidence.img);
   makeGuideEntry(type,entries,reason,evidence.img);
 
 }
@@ -188,7 +188,7 @@ function makeSubmitButton(evidence,doc)
   // create a submit button for evidence windows
   var submit = doc.createElement("BUTTON");
   submit.innerHTML = "submit";
-  submit.style.width = "50px";
+  submit.style.width = "30%";
   submit.style.height = "20px";
   submit.style.display = "block";
   doc.body.appendChild(submit);
