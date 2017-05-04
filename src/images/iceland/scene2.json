@@ -20,24 +20,5 @@ iceland.scene[1] = {
         },
         "symbol": "none"
      },
-     {
-       "tag": "iceland_clue4",
-       "name": "ladies",
-       "img": "images/mickeymouse.jpg",
-        "position": [50, 60, 30, 40],
-        "data":
-        {
-          "type": "geologic",
-          "size": [300,300],
-          "text": "What geographic features might be present?",
-          "list": ["delta", "desert", "geyser", "glacier", "mountain"],
-          "img": "images/mickeymouse.jpg",
-          "research":
-            [
-              {"name": "geologic terms" , "link": "../../geographic_terms.html" },
-            ]
-        },
-        "symbol": "none"
-     },
   ]
 }

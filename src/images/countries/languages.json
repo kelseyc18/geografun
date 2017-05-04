@@ -23,7 +23,7 @@ var french_ =
 	"Mali",
 	"Haiti",
 	"Switzerland",
-	"Reublic of the Congo",
+	"Republic of the Congo",
 	"Belgium",
 	"Monaco",
 	"Luxembourg"
@@ -71,3 +71,5 @@ var japanese_ =
 [
 	"Japan"
 ];
+
+
