@@ -37,8 +37,24 @@ function gfStart()
   gf.possibleEntries.push( {name: "Hebrew", list: hebrew_ } );
   gf.possibleEntries.push( {name: "Japanese", list: japanese_ } );
 
+  var eog = document.getElementById("eog");
+  var select = document.createElement('select');
+  select.id = "selectEOG";
+  var countries = getAllCountries();
+  for (var i in countries)
+  {
+    var option = document.createElement('option');
+    option.text = countries[i];
+    select.appendChild(option);
+  }
+  eog.appendChild(select);
 
-  console.log(gf.possibleEntries);
+  var makeAGuess = document.createElement('button');
+  makeAGuess.id = "makeAGuess";
+  makeAGuess.innerHTML = "guess!";
+  makeAGuess.onclick = function() { checkIfCorrect() };
+
+  document.body.appendChild(makeAGuess);
 
 }
 
@@ -278,4 +294,34 @@ function gfHighlighted(country)
       return true;
   }
   return false;
+}
+
+function onlyUnique(value, index, self)
+{
+    return self.indexOf(value) === index;
+}
+
+function getAllCountries()
+{
+  var countries = [];
+  for (i in gf.possibleEntries)
+  {
+    var clist = gf.possibleEntries[i].list;
+    for (var j in clist)
+    {
+      countries.push( clist[j] );
+    }
+  }
+  return countries.filter(onlyUnique);
+}
+
+function checkIfCorrect()
+{
+  var select = document.getElementById("selectEOG");
+  var guess = select.value;
+  if (gf.location==guess.toLowerCase())
+    alert("correct!");
+  else {
+    alert("wrong!");
+  }
 }
