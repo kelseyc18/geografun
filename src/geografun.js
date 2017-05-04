@@ -54,6 +54,13 @@ function gfStart()
   makeAGuess.innerHTML = "guess!";
   makeAGuess.onclick = function() { checkIfCorrect() };
 
+  var nclicks = document.getElementById("numberOfClicks");
+  gf.nclicks = 2;
+  nclicks.innerHTML = gf.nclicks.toString();
+
+  //ar viewframe = document.getElementById("viewframe");
+  viewer.onclick = function() { adjustClicks(); };
+
   document.body.appendChild(makeAGuess);
 
 }
@@ -321,7 +328,21 @@ function checkIfCorrect()
   var guess = select.value;
   if (gf.location==guess.toLowerCase())
     alert("correct!");
-  else {
+  else
+  {
     alert("wrong!");
+    location.reload();
   }
+}
+
+function adjustClicks()
+{
+  if (gf.nclicks==0)
+  {
+    alert("too many clicks!");
+    location.reload();
+  }
+  gf.nclicks--;
+  var nclicks = document.getElementById("numberOfClicks");
+  nclicks.innerHTML = gf.nclicks.toString();
 }

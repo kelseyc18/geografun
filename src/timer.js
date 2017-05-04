@@ -10,7 +10,7 @@ function Tick() {
   if (TotalSeconds<=0)
   {
     alert("time is up!");
-    //gfStart();
+    location.reload();
     return;
   }
   TotalSeconds -= 1;
