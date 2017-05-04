@@ -55,7 +55,7 @@ function gfStart()
   makeAGuess.onclick = function() { checkIfCorrect() };
 
   var nclicks = document.getElementById("numberOfClicks");
-  gf.nclicks = 2;
+  gf.nclicks = 20;
   nclicks.innerHTML = gf.nclicks.toString();
 
   //ar viewframe = document.getElementById("viewframe");
@@ -150,28 +150,6 @@ function makeWindowAtCenter(url, title, w, h)
     return newWindow;
 }
 
-function getCheckedEntries(t,start,column)
-{
-  var entries = [];
-
-  for (var i=start,row;row=t.rows[i];i++)
-  {
-    var c = row.cells[column];
-    var j = row.cells[0];
-    if (j.children[0]==undefined) continue;
-    if (j.children[0].checked)
-    {
-      var text = c.innerHTML.split(',');
-      for (var k in text)
-      {
-        // split c at commas
-        entries.push(text[k]);
-      }
-    }
-  }
-  return entries;
-}
-
 function getCheckedRows(t,start,column)
 {
   var rows = [];
@@ -199,7 +177,8 @@ function submitEvidenceEntry(evidence,doc)
   var type = evidenceType[evidenceType.selectedIndex].text; // or use evidence.type
 
   // get the checked entries
-  var entries = getCheckedEntries(doc.getElementById("evidenceTable"),0,1);
+  //var entries = getCheckedEntries(doc.getElementById("evidenceTable"),0,1);
+  var entries = getCheckedRows(doc.getElementById("evidenceTable"),0,1);
 
   var reason = prompt("Enter a reason"); // or use evidence.name
   makeGuideEntry(type,entries,reason,evidence.img);
@@ -337,7 +316,7 @@ function checkIfCorrect()
 
 function adjustClicks()
 {
-  if (gf.nclicks==0)
+  if (gf.nclicks==1)
   {
     alert("too many clicks!");
     location.reload();
