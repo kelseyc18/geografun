@@ -8,6 +8,7 @@ function makeGuideEntry(field,conclusion,reason,imgsrc)
   var text = row.insertCell(2);
   var why  = row.insertCell(3);
   var img = row.insertCell(4);
+  var del = row.insertCell(5);
 
   // set the row data
   cbox.innerHTML = "<input type='checkbox'></input>";
@@ -15,6 +16,10 @@ function makeGuideEntry(field,conclusion,reason,imgsrc)
   type.innerHTML = field;
   text.innerHTML = conclusion;
   why.innerHTML = reason;
+  var delbutton = document.createElement('button');
+  delbutton.innerHTML= "del";
+  delbutton.onclick = function() { row.parentNode.removeChild(row); };
+  del.appendChild(delbutton);
 
   // image column, open in new tab (hence target='_blank');
   img.innerHTML = "<a target='_blank' href="+imgsrc+">img</a>";
