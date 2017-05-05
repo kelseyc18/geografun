@@ -1,3 +1,7 @@
+function getEntryCount() {
+  return $('#guide tr').length - 1
+}
+
 function makeGuideEntry(field,conclusion,reason,imgsrc)
 {
   var guide = document.getElementById('guide');

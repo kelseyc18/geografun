@@ -52,7 +52,15 @@ function gfStart()
   var makeAGuess = document.createElement('button');
   makeAGuess.id = "makeAGuess";
   makeAGuess.innerHTML = "guess!";
-  makeAGuess.onclick = function() { checkIfCorrect() };
+  makeAGuess.onclick = function() {
+    if (getEntryCount() < minEntryCount) {
+      alert('Please add at least ' + minEntryCount.toString() +
+      ' pieces of evidence to your field journal!')
+    }
+    else {
+      checkIfCorrect()
+    }
+  };
 
   var nclicks = document.getElementById("numberOfClicks");
   gf.nclicks = 20;
@@ -299,7 +307,9 @@ function getAllCountries()
       countries.push( clist[j] );
     }
   }
-  return countries.filter(onlyUnique);
+  result = countries.filter(onlyUnique);
+  result.sort()
+  return result
 }
 
 function checkIfCorrect()
