@@ -256,7 +256,7 @@ function makeEvidenceWindow(id,data)
   evidenceTypeDiv.innerHTML = "What type of evidence is this?";
   var select = evidence.document.createElement('select');
   select.id  = "evidenceType";
-  var evidenceTypes = ["Linguistic","Religious","Geologic","Climate","Economic"];
+  var evidenceTypes = ["Linguistic","Cultural","Geologic","Climate","Economic"];
   for (var i in evidenceTypes)
   {
     var option = evidence.document.createElement('option');

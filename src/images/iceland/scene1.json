@@ -1,45 +1,24 @@
-iceland.scene[0] = {
-  "name": "scene1",
+iceland.scene[1] = {
+  "name": "scene2",
   "clues": [
      {
-       "tag": "iceland_clue1",
-       "name": "sign",
+       "tag": "iceland_clue3",
+       "name": "smoke",
        "img": "images/mickeymouse.jpg",
-        "position": [10,25,10,20],
+        "position": [100, 10, 30, 40],
         "data":
         {
-          "type": "language",
+          "type": "geologic",
           "size": [300,300],
-          "text": "What languages might be present?",
-          "list": ["English","Spanish","German","Swedish","Icelandic","Hebrew","Japanese"],
+          "text": "What geographic features might be present?",
+          "list": ["delta", "desert", "geyser", "glacier", "mountain"],
           "img": "images/mickeymouse.jpg",
           "research":
             [
-              {"name": "latin" , "link": "https://en.wikipedia.org/wiki/Latin" },
-              {"name": "cyrillic" , "link": "https://en.wikipedia.org/wiki/Cyrillic_script" }
+              {"name": "geologic terms" , "link": "../../geographic_terms.html" },
             ]
         },
         "symbol": "none"
      },
-     {
-       "tag": "iceland_clue2",
-       "name": "building",
-       "img": "images/mickeymouse.jpg",
-       "position": [53,7,5,20],
-       "data":
-       {
-         "type": "religious",
-         "size": [300,300],
-         "text": "what is the dominant religion associated with this building?",
-         "list": ["Christianity", "Judaism", "Islam","Hinduism"],
-         "img": "images/mickeymouse.jpg",
-         "research":
-           [
-             {"name": "christianity" , "link": "https://en.wikipedia.org/wiki/Christianity" },
-             {"name": "hinduism" , "link": "https://en.wikipedia.org/wiki/Hinduism" }
-           ]
-       },
-       "symbol": "none"
-     }
   ]
 }
