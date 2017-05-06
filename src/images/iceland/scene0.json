@@ -1,17 +1,26 @@
 iceland.scene[0] = {
-  "name": "scene1",
+  "name": "scene0",
   "clues": [
      {
-       "tag": "iceland_clue1",
-       "name": "sign",
+       "tag": "iceland_clue3",
+       "name": "english_sign",
        "img": "images/mickeymouse.jpg",
-        "position": [10,25,10,20],
+        "position": [0, 40, 12, 40],
         "data":
         {
-          "type": "language",
+          "type": "linguistic",
           "size": [300,300],
-          "text": "What languages might be present?",
-          "list": ["English","Spanish","German","Swedish","Icelandic","Hebrew","Japanese"],
+          "text": "This sign is in a language that is not the official language of this country, but is a prominent foreign language.<br><br>What language is this sign in?",
+          "list": [
+            "English",
+            "Spanish",
+            "German",
+            "Swedish",
+            "Icelandic",
+            "Hebrew",
+            "Japanese",
+            "Russian"
+          ],
           "img": "images/mickeymouse.jpg",
           "research":
             [
@@ -25,21 +34,53 @@ iceland.scene[0] = {
        "tag": "iceland_clue2",
        "name": "building",
        "img": "images/mickeymouse.jpg",
-       "position": [53,7,5,20],
+       "position": [50,15,10,50],
        "data":
        {
-         "type": "religious",
+         "type": "cultural",
          "size": [300,300],
-         "text": "what is the dominant religion associated with this building?",
-         "list": ["Christianity", "Judaism", "Islam","Hinduism"],
+         "text": "What is the dominant religion associated with this building?",
+         "list": ["Christianity", "Judaism", "Islam","Hinduism", "Buddhism"],
          "img": "images/mickeymouse.jpg",
          "research":
            [
-             {"name": "christianity" , "link": "https://en.wikipedia.org/wiki/Christianity" },
-             {"name": "hinduism" , "link": "https://en.wikipedia.org/wiki/Hinduism" }
+             {"name": "Christianity" , "link": "https://en.wikipedia.org/wiki/Christianity" },
+             {"name": "Judaism", "link": "https://en.wikipedia.org/wiki/Judaism"},
+             {"name": "Islam", "link": "https://en.wikipedia.org/wiki/Islam"},
+             {"name": "Hinduism" , "link": "https://en.wikipedia.org/wiki/Hinduism" },
+             {"name": "Buddhism" , "link": "https://en.wikipedia.org/wiki/Buddhism" }
            ]
        },
        "symbol": "none"
-     }
+     },
+     {
+       "tag": "iceland_clue3",
+       "name": "english_sign",
+       "img": "images/mickeymouse.jpg",
+        "position": [0, 40, 12, 40],
+        "data":
+        {
+          "type": "linguistic",
+          "size": [300,300],
+          "text": "This sign has words in two languages on it. Both of these languages are commonly used in this country. One is the official language, and the other is a common foreign language.<br><br>Which languages do you see on this sign?",
+          "list": [
+            "English",
+            "Spanish",
+            "German",
+            "Swedish",
+            "Icelandic",
+            "Hebrew",
+            "Japanese",
+            "Russian"
+          ],
+          "img": "images/mickeymouse.jpg",
+          "research":
+            [
+              {"name": "latin" , "link": "https://en.wikipedia.org/wiki/Latin" },
+              {"name": "cyrillic" , "link": "https://en.wikipedia.org/wiki/Cyrillic_script" }
+            ]
+        },
+        "symbol": "none"
+     },
   ]
 }

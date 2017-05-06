@@ -17,11 +17,12 @@ function makeGuideEntry(field,conclusion,reason,imgsrc)
   // set the row data
   cbox.innerHTML = "<input type='checkbox'></input>";
   cbox.style.width = "3px";
-  type.innerHTML = field;
+  type.innerHTML = field + ":";
+  type.style.fontWeight = "bold";
   text.innerHTML = conclusion;
   why.innerHTML = reason;
   var delbutton = document.createElement('button');
-  delbutton.innerHTML= "del";
+  delbutton.innerHTML= "delete entry";
   delbutton.onclick = function() { row.parentNode.removeChild(row); };
   del.appendChild(delbutton);
 

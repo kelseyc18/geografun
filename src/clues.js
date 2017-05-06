@@ -8,7 +8,7 @@ function makeClue(clue)
   var box = document.createElement('div');
   box.id = clue.tag;
   box.style.border = "1px solid red"; // red for now until release
-  box.style.position = "relative";
+  box.style.position = "absolute";
   box.style.width = clue.position[2]+"%";
   box.style.height = clue.position[3]+"%";
   box.style.zIndex = 1;

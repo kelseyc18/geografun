@@ -55,7 +55,7 @@ function gfStart()
   makeAGuess.onclick = function() {
     if (getEntryCount() < minEntryCount) {
       alert('Please add at least ' + minEntryCount.toString() +
-      ' pieces of evidence to your field journal!')
+      ' pieces of evidence to your field journal.')
     }
     else {
       checkIfCorrect()
@@ -85,7 +85,9 @@ function gfSetLocation()
 
 function gfSetImage()
 {
+  if (gf.imageCounter < 0) gf.imageCounter += gf.nscene;
   gf.imageNumber = gf.imageCounter % gf.nscene;
+
   // set the current image from location and current scene number
   viewer.style.backgroundImage = "url('images/"+gf.location+"/img"+gf.imageNumber.toString()+".png')";
   viewer.style.backgroundSize = "100% 100%";

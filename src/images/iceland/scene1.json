@@ -1,11 +1,11 @@
 iceland.scene[1] = {
-  "name": "scene2",
+  "name": "scene1",
   "clues": [
      {
        "tag": "iceland_clue3",
        "name": "smoke",
        "img": "images/mickeymouse.jpg",
-        "position": [100, 10, 30, 40],
+        "position": [60, 10, 35, 40],
         "data":
         {
           "type": "geologic",
@@ -15,7 +15,26 @@ iceland.scene[1] = {
           "img": "images/mickeymouse.jpg",
           "research":
             [
-              {"name": "geologic terms" , "link": "../../geographic_terms.html" },
+              {"name": "geologic terms" , "link": "http://web.mit.edu/kelseyc/www/geografun/geographic_terms.html" },
+            ]
+        },
+        "symbol": "none"
+     },
+     {
+       "tag": "iceland_clue3",
+       "name": "mountain",
+       "img": "images/mickeymouse.jpg",
+        "position": [40, 10, 20, 40],
+        "data":
+        {
+          "type": "geologic",
+          "size": [300,300],
+          "text": "What geographic features might be present?",
+          "list": ["delta", "desert", "geyser", "glacier", "mountain"],
+          "img": "images/mickeymouse.jpg",
+          "research":
+            [
+              {"name": "geologic terms" , "link": "http://web.mit.edu/kelseyc/www/geografun/geographic_terms.html" },
             ]
         },
         "symbol": "none"
