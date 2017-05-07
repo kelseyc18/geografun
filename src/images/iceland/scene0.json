@@ -2,7 +2,7 @@ iceland.scene[0] = {
   "name": "scene0",
   "clues": [
      {
-       "tag": "iceland_clue3",
+       "tag": "iceland_clue0",
        "name": "english_sign",
        "img": "images/mickeymouse.jpg",
         "position": [0, 40, 12, 40],
@@ -31,7 +31,7 @@ iceland.scene[0] = {
         "symbol": "none"
      },
      {
-       "tag": "iceland_clue2",
+       "tag": "iceland_clue1",
        "name": "building",
        "img": "images/mickeymouse.jpg",
        "position": [50,15,10,50],
@@ -54,7 +54,7 @@ iceland.scene[0] = {
        "symbol": "none"
      },
      {
-       "tag": "iceland_clue3",
+       "tag": "iceland_clue2",
        "name": "english_sign",
        "img": "images/mickeymouse.jpg",
         "position": [0, 40, 12, 40],

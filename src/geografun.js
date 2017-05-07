@@ -178,7 +178,7 @@ function getCheckedRows(t,start,column)
   return rows;
 }
 
-function submitEvidenceEntry(evidenceWindow,evidence,doc)
+function submitEvidenceEntry(evidenceWindow,evidence,doc,clueID)
 {
   var plotOnSubmit = false;
   if (plotOnSubmit)
@@ -192,13 +192,13 @@ function submitEvidenceEntry(evidenceWindow,evidence,doc)
   var entries = getCheckedRows(doc.getElementById("evidenceTable"),0,1);
 
   var reason = prompt("Enter a reason"); // or use evidence.name
-  makeGuideEntry(type,entries,reason,evidence.img);
+  makeGuideEntry(type,entries,reason,evidence.img,clueID);
 
   evidenceWindow.close();
 
 }
 
-function makeSubmitButton(evidenceWindow,evidence,doc)
+function makeSubmitButton(evidenceWindow,evidence,doc,clueID)
 {
   // create a submit button for evidence windows
   var submit = doc.createElement("BUTTON");
@@ -208,7 +208,7 @@ function makeSubmitButton(evidenceWindow,evidence,doc)
   submit.style.display = "block";
   doc.body.appendChild(submit);
 
-  submit.onclick = function() { submitEvidenceEntry(evidenceWindow,evidence,doc); };
+  submit.onclick = function() { submitEvidenceEntry(evidenceWindow,evidence,doc,clueID); };
 
   updateMap();
 }
@@ -258,7 +258,7 @@ function makeResearchButton(data,doc)
   doc.body.appendChild(span);
 }
 
-function makeEvidenceWindow(id,data)
+function makeEvidenceWindow(id,data,clueID)
 {
   var evidence = makeWindowAtCenter("","_blank",data.size[0],data.size[1]); //window.open("","evidence","width=200,height=200");
 
@@ -280,7 +280,7 @@ function makeEvidenceWindow(id,data)
 
   fillEvidence(evidence.document,data);
 
-  makeSubmitButton(evidence,data,evidence.document);
+  makeSubmitButton(evidence,data,evidence.document,clueID);
   makeResearchButton(data,evidence.document);
 
 }

@@ -2,7 +2,7 @@ iceland.scene[2] = {
   "name": "scene2",
   "clues": [
      {
-       "tag": "iceland_clue3",
+       "tag": "iceland_clue5",
        "name": "aurora",
        "img": "images/mickeymouse.jpg",
         "position": [40, 5, 30, 50],

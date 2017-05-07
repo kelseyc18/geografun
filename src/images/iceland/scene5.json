@@ -2,7 +2,7 @@ iceland.scene[5] = {
   "name": "scene5",
   "clues": [
      {
-       "tag": "iceland_clue3",
+       "tag": "iceland_clue9",
        "name": "mountain",
        "img": "images/mickeymouse.jpg",
         "position": [1, 10, 98, 20],
@@ -21,7 +21,7 @@ iceland.scene[5] = {
         "symbol": "none"
      },
      {
-       "tag": "iceland_clue3",
+       "tag": "iceland_clue10",
        "name": "english_sign",
        "img": "images/mickeymouse.jpg",
         "position": [25, 55, 10, 20],

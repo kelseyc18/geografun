@@ -2,8 +2,12 @@ function getEntryCount() {
   return $('#guide tr').length - 1
 }
 
-function makeGuideEntry(field,conclusion,reason,imgsrc)
+function makeGuideEntry(field,conclusion,reason,imgsrc,clueID)
 {
+  if ($('#' + clueID + '_guide_entry').length) {
+    $('#' + clueID + '_guide_entry').remove()
+  }
+
   var guide = document.getElementById('guide');
   var row = guide.insertRow(guide.rows.length);
 
@@ -13,6 +17,8 @@ function makeGuideEntry(field,conclusion,reason,imgsrc)
   var why  = row.insertCell(3);
   var img = row.insertCell(4);
   var del = row.insertCell(5);
+
+  row.setAttribute("id", clueID + '_guide_entry');
 
   // set the row data
   cbox.innerHTML = "<input type='checkbox'></input>";
