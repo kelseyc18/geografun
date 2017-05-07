@@ -47,6 +47,9 @@ function gfStart()
     option.text = countries[i];
     select.appendChild(option);
   }
+  var eogPrompt = document.createElement('p');
+  eogPrompt.innerHTML = 'What country do you think this is?';
+  eog.appendChild(eogPrompt);
   eog.appendChild(select);
 
   var makeAGuess = document.createElement('button');
