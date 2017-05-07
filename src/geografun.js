@@ -178,7 +178,7 @@ function getCheckedRows(t,start,column)
   return rows;
 }
 
-function submitEvidenceEntry(evidence,doc)
+function submitEvidenceEntry(evidenceWindow,evidence,doc)
 {
   var plotOnSubmit = false;
   if (plotOnSubmit)
@@ -194,9 +194,11 @@ function submitEvidenceEntry(evidence,doc)
   var reason = prompt("Enter a reason"); // or use evidence.name
   makeGuideEntry(type,entries,reason,evidence.img);
 
+  evidenceWindow.close();
+
 }
 
-function makeSubmitButton(evidence,doc)
+function makeSubmitButton(evidenceWindow,evidence,doc)
 {
   // create a submit button for evidence windows
   var submit = doc.createElement("BUTTON");
@@ -206,7 +208,7 @@ function makeSubmitButton(evidence,doc)
   submit.style.display = "block";
   doc.body.appendChild(submit);
 
-  submit.onclick = function() { submitEvidenceEntry(evidence,doc); };
+  submit.onclick = function() { submitEvidenceEntry(evidenceWindow,evidence,doc); };
 
   updateMap();
 }
@@ -278,8 +280,9 @@ function makeEvidenceWindow(id,data)
 
   fillEvidence(evidence.document,data);
 
-  makeSubmitButton(data,evidence.document);
+  makeSubmitButton(evidence,data,evidence.document);
   makeResearchButton(data,evidence.document);
+
 }
 
 // function returning boolean if a country should be highlighted
