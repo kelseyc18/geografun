@@ -40,6 +40,8 @@
     background-size:contain;
     position: relative;
     z-index: 10;
+    cursor: pointer;
+    cursor: hand;
 }
 
 #arrowleft {
@@ -53,6 +55,8 @@
   background-size:contain;
   position: relative;
   z-index: 10;
+  cursor: pointer;
+  cursor: hand;
 }
 
 #arrowfill {
@@ -79,6 +83,8 @@
   background-size:contain;
   position: relative;
   z-index: 10;
+  cursor: pointer;
+  cursor: hand;
 }
 
 #clue {

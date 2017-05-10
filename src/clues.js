@@ -16,8 +16,16 @@ function makeClue(clue)
   box.style.top = clue.position[1]+"%";
   box.style.display = "block";
 
+  if (gf.cluesFound.includes(clue.tag)) {
+    makeVisible(box);
+  }
+
   // when clue is clicked, open an evidence window
-  box.onclick = function() { makeVisible(box);makeEvidenceWindow(clue.tag,clue.data,clue.tag); };
+  box.onclick = function() {
+    makeVisible(box);
+    makeEvidenceWindow(clue.tag,clue.data,clue.tag);
+    gf.cluesFound.push(clue.tag);
+  };
 
   // add the clue as a child to the viewer frame
   viewer.appendChild(box);
