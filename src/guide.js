@@ -1,10 +1,12 @@
 $(function() {
   $('#selectAllButton').click(function() {
     $('.guide_checkbox').prop('checked', true);
+    updateCountries(guide,1,2);
   });
 
   $('#selectNoneButton').click(function() {
     $('.guide_checkbox').prop('checked', false);
+    updateCountries(guide,1,2);
   });
 });
 
@@ -47,8 +49,9 @@ function makeGuideEntry(field,conclusion,reason,imgsrc,clueID)
   // image column, open in new tab (hence target='_blank');
   // img.innerHTML = "<a target='_blank' href="+imgsrc+">img</a>";
 
+  $("#" + checkboxID).prop("checked", true);
+  updateCountries(guide,1,2);
   cbox.onclick = function() {updateCountries(guide,1,2);};
-  // $("#" + checkboxID).prop("checked", true);
 }
 
 function guideHasCountry(c)
