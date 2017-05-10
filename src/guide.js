@@ -1,3 +1,13 @@
+$(function() {
+  $('#selectAllButton').click(function() {
+    $('.guide_checkbox').prop('checked', true);
+  });
+
+  $('#selectNoneButton').click(function() {
+    $('.guide_checkbox').prop('checked', false);
+  });
+});
+
 function getEntryCount() {
   return $('#guide tr').length - 1
 }
@@ -20,9 +30,11 @@ function makeGuideEntry(field,conclusion,reason,imgsrc,clueID)
 
   row.setAttribute("id", clueID + '_guide_entry');
 
+  var checkboxID = clueID + "_checkbox";
   // set the row data
-  cbox.innerHTML = "<input type='checkbox'></input>";
+  cbox.innerHTML = "<input type='checkbox' id='" + checkboxID + "' class='guide_checkbox'></input>";
   cbox.style.width = "3px";
+  cbox.checked = true;
   type.innerHTML = field + ":";
   type.style.fontWeight = "bold";
   text.innerHTML = conclusion;
@@ -36,6 +48,7 @@ function makeGuideEntry(field,conclusion,reason,imgsrc,clueID)
   // img.innerHTML = "<a target='_blank' href="+imgsrc+">img</a>";
 
   cbox.onclick = function() {updateCountries(guide,1,2);};
+  // $("#" + checkboxID).prop("checked", true);
 }
 
 function guideHasCountry(c)
