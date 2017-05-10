@@ -20,7 +20,7 @@ function gfStart()
   // initialize highlighted countries to be empty
   gf.highlighted = [];
 
-  // load the possible entries
+  // load country lists associated with each clue option
   gf.possibleEntries = [];
   gf.possibleEntries.push( {name: "Hinduism", list: hinduism_ } );
   gf.possibleEntries.push( {name: "Islam", list: islam_ } );
@@ -36,6 +36,26 @@ function gfStart()
   gf.possibleEntries.push( {name: "Swedish", list: swedish_ } );
   gf.possibleEntries.push( {name: "Hebrew", list: hebrew_ } );
   gf.possibleEntries.push( {name: "Japanese", list: japanese_ } );
+
+  gf.possibleEntries.push( {name: "Rainforest", list: rainforest_ } );
+  gf.possibleEntries.push( {name: "Monsoon", list: monsoon_ });
+  gf.possibleEntries.push( {name: "Tropical savanna", list: savanna_ });
+  gf.possibleEntries.push( {name: "Humid subtropical", list: humidSubtropical_ });
+  gf.possibleEntries.push( {name: "Humid continental ", list: humidContinental_ });
+  gf.possibleEntries.push( {name: "Mediterranean climate", list: mediterranean_ });
+  gf.possibleEntries.push( {name: "Steppe", list: steppe_ });
+  gf.possibleEntries.push( {name: "Subarctic climate", list: subarctic_ });
+  gf.possibleEntries.push( {name: "Tundra", list: tundra_ });
+  gf.possibleEntries.push( {name: "Polar ice cap", list: polarIceCap_ });
+  gf.possibleEntries.push( {name: "North Pole", list: northPole_ });
+  gf.possibleEntries.push( {name: "Equator", list: equator_ });
+  gf.possibleEntries.push( {name: "South Pole", list: southPole_ });
+
+  gf.possibleEntries.push( {name: "Fishing", list: fishing_ });
+  gf.possibleEntries.push( {name: "Agriculture", list: agriculture_ });
+  gf.possibleEntries.push( {name: "Tourism", list: tourism_ });
+  gf.possibleEntries.push( {name: "Manufacturing", list: manufacturing_ });
+  gf.possibleEntries.push( {name: "Mining", list: mining_ });
 
   var eog = document.getElementById("eog");
   var select = document.createElement('select');
@@ -246,6 +266,10 @@ function makeResearchButton(data,doc)
     research.appendChild(option);
   }
 
+  var researchPrompt = doc.createElement('p');
+  researchPrompt.innerHTML = 'Do some research!';
+  span.appendChild(doc.createElement('hr'));
+  span.appendChild(researchPrompt);
   span.appendChild(research);
 
   var button = doc.createElement('button');

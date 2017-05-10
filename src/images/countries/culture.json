@@ -1,0 +1,93 @@
+var dollar_ =
+[
+  "Puerto Rico",
+  "Ecuador",
+  "El Salvador",
+  "Zimbabwe",
+  "Guam",
+  "Virgin Islands",
+  "American Samoa",
+  "Micronesia",
+  "Palau",
+  "Marshall Islands",
+  "United States"
+];
+
+var pound_ =
+[
+  "United Kingdom",
+  "Egypt",
+  "Lebanon",
+  "South Sudan",
+  "Sudan",
+  "Syria"
+];
+
+var yen_ =
+[
+  "Japan"
+];
+
+var euro_ =
+[
+  "Austria",
+  "Belgium",
+  "Cyprus",
+  "Estonia",
+  "Finland",
+  "France",
+  "Germany",
+  "Greece",
+  "Ireland",
+  "Italy",
+  "Latvia",
+  "Lithuania",
+  "Luxembourg",
+  "Malta",
+  "Netherlands",
+  "Portugal",
+  "Slovakia",
+  "Slovenia",
+  "Spain"
+];
+
+var swedishKrona_ =
+[
+  "Sweden"
+];
+
+var danishKrone_ =
+[
+  "Denmark",
+  "Greenland"
+];
+
+var norwegianKrone_ =
+[
+  "Norway"
+];
+
+var icelandicKrona_ =
+[
+  "Iceland"
+];
+
+var ruble_ =
+[
+  "Russia"
+];
+
+var zloty_ =
+[
+  "Poland"
+];
+
+var swissFranc_ =
+[
+  "Switzerland"
+];
+
+var lira_ =
+[
+  "Turkey"
+];

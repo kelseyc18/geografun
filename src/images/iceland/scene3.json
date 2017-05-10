@@ -12,7 +12,7 @@ iceland.scene[3] = {
           "size": [300,300],
           "text": "The weather at this location can vary frequently throughout the year to great extremes. It has long, very cold winters and short, mild summers.<br><br>What kind of climate might this description correspond to?",
           "list": [
-            "Rain forest",
+            "Rainforest",
             "Monsoon",
             "Tropical savanna",
             "Humid subtropical",

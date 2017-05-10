@@ -13,7 +13,7 @@ iceland.scene[4] = {
           "text": "This is one of the major industries in the region, contributing to more than 5% of this country’s economy and providing jobs to nearly 12% of the workforce.<br><br>What industry do you think it is?",
           "list": [
             "Fishing",
-            "Agricultural",
+            "Agriculture",
             "Tourism",
             "Mining",
             "Manufacturing"
@@ -42,7 +42,7 @@ iceland.scene[4] = {
           "text": "This is a major industry for the region, contributing to more than a quarter of the country’s economy.<br><br>What industry do you think it is?",
           "list": [
             "Fishing",
-            "Agricultural",
+            "Agriculture",
             "Tourism",
             "Mining",
             "Manufacturing"

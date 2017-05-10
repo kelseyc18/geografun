@@ -57,7 +57,7 @@ iceland.scene[0] = {
        "tag": "iceland_clue2",
        "name": "english_sign",
        "img": "images/mickeymouse.jpg",
-        "position": [0, 40, 12, 40],
+        "position": [80, 40, 12, 40],
         "data":
         {
           "type": "linguistic",

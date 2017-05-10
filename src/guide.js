@@ -78,31 +78,6 @@ function showCountries(entries)
   updateMap();
 }
 
-/*\
- *
- * intersect two arrays a & b
- *
-\*/
-function intersectList(a, b)
-{
-  var ai=0, bi=0;
-  var result = [];
-
-  while( ai < a.length && bi < b.length )
-  {
-     if      (a[ai] < b[bi] ){ ai++; }
-     else if (a[ai] > b[bi] ){ bi++; }
-     else /* they're equal */
-     {
-       result.push(a[ai]);
-       ai++;
-       bi++;
-     }
-  }
-
-  return result;
-}
-
 function updateCountries(table,start,column)
 {
   // compute the intersection of the current list with the ones from this clue
@@ -126,7 +101,7 @@ function updateCountries(table,start,column)
     for (var e=1;e<entries.length;e++)
     {
       var entry = entries[e];
-      list = intersectList( entryToCountryList(entry) , list );
+      list = list.concat(entryToCountryList(entry));
     }
     rowEntries.push(list);
   }
@@ -135,7 +110,7 @@ function updateCountries(table,start,column)
   var entries = rowEntries[0];
   for (var r=1;r<rowEntries.length;r++)
   {
-    entries = intersectList( rowEntries[r] , entries );
+    entries = _.intersection(entries, rowEntries[r])
   }
 
   // keep this to debug for now

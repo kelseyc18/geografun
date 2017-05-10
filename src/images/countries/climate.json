@@ -1,0 +1,229 @@
+var rainforest_ =
+[
+  "Samoa",
+  "Philippines",
+  "Australia",
+  "Congo",
+  "Malaysia",
+  "Suriname",
+  "Indonesia",
+  "Colombia",
+  "Sri Lanka",
+  "Singapore",
+  "United States"
+];
+
+var monsoon_ =
+[
+  "Ivory Coast",
+  "Australia",
+  "Bangladesh",
+  "Venezuela",
+  "Vietnam",
+  "Philippines",
+  "Indonesia",
+  "Brazil",
+  "Nigeria",
+  "Myanmar",
+  "Maldives"
+];
+
+var savanna_ =
+[
+  "Cambodia",
+  "Venezuela",
+  "Colombia",
+  "Tanzania",
+  "Australia",
+  "China",
+  "Vietnam",
+  "Taiwan",
+  "Indonesia",
+  "Jamaica",
+  "Nigeria",
+  "India",
+  "United States",
+  "Haiti",
+  "Brazil",
+  "Mexico",
+  "Guatemala",
+  "Bangladesh",
+  "Panama"
+];
+
+var humidSubtropical_ =
+[
+  "Argentina",
+  "Brazil",
+  "Australia",
+  "Iran",
+  "Azerbaijan",
+  "Portugal",
+  "Turkey",
+  "Russia",
+  "Georgia",
+  "India",
+  "China",
+  "Taiwan",
+  "Japan",
+  "South Africa",
+  "United States"
+];
+
+var humidContinental_ =
+[
+  "Finland",
+  "Ukraine",
+  "Russia",
+  "Sweden",
+  "Norway",
+  "United States",
+  "Canada",
+  "Turkey",
+  "Poland",
+  "Czech Republic",
+  "Belaurs",
+  "Australia",
+  "Japan",
+  "Kazakhstan",
+  "Hungary",
+  "Slovakia",
+  "Romania",
+  "China",
+  "North Korea",
+  "South Korea"
+];
+
+var oceanic_ =
+[
+  "France",
+  "Norway",
+  "Germany",
+  "United Kingdom",
+  "Brazil",
+  "Ireland",
+  "Belgium",
+  "Netherlands",
+  "Spain",
+  "New Zealand",
+  "Turkey",
+  "Canada",
+  "United States",
+  "South Africa",
+  "Australia",
+  "Portugal",
+  "Andorra",
+  "Argentina",
+  "Chile",
+  "Denmark",
+  "Switzerland"
+];
+
+var mediterranean_ =
+[
+  "Lebanon",
+  "Syria",
+  "Iraq",
+  "Israel",
+  "Australia",
+  "Morocco",
+  "Italy",
+  "Spain",
+  "France",
+  "Greece",
+  "Turkey",
+  "Uzbekistan",
+  "Tajikistan",
+  "Algeria",
+  "Tunisia",
+  "Malta"
+];
+
+var steppe_ =
+[
+  "Pakistan",
+  "Aruba",
+  "Spain",
+  "Australia",
+  "United States",
+  "Greece",
+  "Mali",
+  "Niger",
+  "Chad",
+  "China",
+  "Jordan",
+  "Mexico",
+  "Azerbaijan",
+  "Armenia",
+  "Iran",
+  "Russia",
+  "Mongolia",
+  "Argentina"
+];
+
+var subarctic_ =
+[
+  "United States",
+  "Canada",
+  "Switzerland",
+  "Sweden",
+  "Iceland",
+  "Norway",
+  "Russia",
+  "China",
+  "Nepal",
+  "Finland"
+];
+
+var tundra_ =
+[
+  "Russia",
+  "Iceland",
+  "Canada",
+  "Greenland",
+  "Finland",
+  "Norway",
+  "Sweden",
+  "New Zealand",
+  "Antarctica"
+];
+
+var polarIceCap_ =
+[
+  "Antarctica",
+  "Greenland",
+  "Nepal",
+  "Austria",
+  "Turkey"
+];
+
+var northPole_ =
+[
+  "Canada",
+  "Greenland",
+  "Russia",
+  "Denmark",
+  "Norway",
+  "Iceland"
+];
+
+ var southPole_ =
+[
+  "Antarctica"
+];
+
+var equator_ =
+[
+  "Ecuador",
+  "Brazil",
+  "Colombia",
+  "Gabon",
+  "Republic of the Congo",
+  "Democratic Republic of the Congo",
+  "Uganda",
+  "Kenya",
+  "Somalia",
+  "Maldives",
+  "Indonesia",
+  "Kiribati"
+];
