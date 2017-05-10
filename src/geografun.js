@@ -348,7 +348,9 @@ function getAllCountries()
     var clist = gf.possibleEntries[i].list;
     for (var j in clist)
     {
-      countries.push( clist[j] );
+      if (!(countries.includes(clist[j]))) {
+        countries.push( clist[j] );
+      }
     }
   }
   result = countries.filter(onlyUnique);

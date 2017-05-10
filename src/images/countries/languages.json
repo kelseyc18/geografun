@@ -29,7 +29,7 @@ var french_ =
 	"Luxembourg"
 ];
 
-var spanish_ = 
+var spanish_ =
 [
 	"Spain",
 	"Mexico",
@@ -40,12 +40,12 @@ var spanish_ =
 	"Panama"
 ]
 
-var icelandic_ = 
+var icelandic_ =
 [
 	"Iceland"
 ];
 
-var dutch_ = 
+var dutch_ =
 [
 	"Netherlands",
 	"Belgium"
@@ -71,5 +71,3 @@ var japanese_ =
 [
 	"Japan"
 ];
-
-
