@@ -21,19 +21,19 @@
       var minEntryCount = 3;
     </script>
 
-    <!-- load scripts -->
-    <script type="text/javascript" src="geografun.js"> </script>
-    <script type="text/javascript" src="guide.js"> </script>
-    <script type="text/javascript" src="clues.js"> </script>
-    <script type="text/javascript" src="events.js"> </script>
-    <script type="text/javascript" src="timer.js"> </script>
-
     <!-- third-party libraries -->
     <script type="text/javascript" src="third_party/jquery.js"> </script>
     <link rel="stylesheet" href="third_party/jquery-jvectormap-2.0.3.css" type="text/css" media="screen"/>
     <script src="third_party/jquery-jvectormap-2.0.3.min.js"></script>
     <script src="third_party/jquery-jvectormap-world-mill.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+
+    <!-- load scripts -->
+    <script type="text/javascript" src="geografun.js"> </script>
+    <script type="text/javascript" src="guide.js"> </script>
+    <script type="text/javascript" src="clues.js"> </script>
+    <script type="text/javascript" src="events.js"> </script>
+    <script type="text/javascript" src="timer.js"> </script>
 
     <!-- initialize the location holders -->
     <script type="text/javascript">
@@ -77,10 +77,14 @@
     </div>
 
     <!-- add the logbook a.k.a. guide -->
-    <div id="logbook" style="float:left; background: grey">
+    <div id="logbook" style="float:left; background: grey; position: relative;">
       <table id="guide">
         <thead><th></th></thead>
       </table>
+      <div style="position: absolute; bottom: 0;">
+        <button id="selectAllButton">Select All</button>
+        <button id="selectNoneButton">Select None</button>
+      </div>
     </div>
 
     <!-- add the map -->
