@@ -15,8 +15,8 @@ function makeGuideEntry(field,conclusion,reason,imgsrc,clueID)
   var type = row.insertCell(1);
   var text = row.insertCell(2);
   var why  = row.insertCell(3);
-  var img = row.insertCell(4);
-  var del = row.insertCell(5);
+  // var img = row.insertCell(4);
+  var del = row.insertCell(4);
 
   row.setAttribute("id", clueID + '_guide_entry');
 
@@ -33,7 +33,7 @@ function makeGuideEntry(field,conclusion,reason,imgsrc,clueID)
   del.appendChild(delbutton);
 
   // image column, open in new tab (hence target='_blank');
-  img.innerHTML = "<a target='_blank' href="+imgsrc+">img</a>";
+  // img.innerHTML = "<a target='_blank' href="+imgsrc+">img</a>";
 
   cbox.onclick = function() {updateCountries(guide,1,2);};
 }
