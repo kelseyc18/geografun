@@ -18,6 +18,7 @@
       var totalSeconds;
       var timer;
       var gf = {};
+      var minEntryCount = 3;
     </script>
 
     <!-- load scripts -->
@@ -32,13 +33,14 @@
     <link rel="stylesheet" href="third_party/jquery-jvectormap-2.0.3.css" type="text/css" media="screen"/>
     <script src="third_party/jquery-jvectormap-2.0.3.min.js"></script>
     <script src="third_party/jquery-jvectormap-world-mill.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
 
     <!-- initialize the location holders -->
     <script type="text/javascript">
       var iceland = {};
       var greece = {};
 
-      iceland.nscene = 1;
+      iceland.nscene = 7;
       greece.nscene  = 0;
 
       iceland.scene = Array(iceland.nscene);
@@ -47,11 +49,20 @@
     </script>
 
     <!-- load possible locations and scenes -->
+    <script type="text/javascript" src="images/iceland/scene0.json"></script>
     <script type="text/javascript" src="images/iceland/scene1.json"></script>
+    <script type="text/javascript" src="images/iceland/scene2.json"></script>
+    <script type="text/javascript" src="images/iceland/scene3.json"></script>
+    <script type="text/javascript" src="images/iceland/scene4.json"></script>
+    <script type="text/javascript" src="images/iceland/scene5.json"></script>
+    <script type="text/javascript" src="images/iceland/scene6.json"></script>
 
     <!-- load countries by evidence type -->
     <script type="text/javascript" src="images/countries/religions.json"></script>
     <script type="text/javascript" src="images/countries/languages.json"></script>
+    <script type="text/javascript" src="images/countries/climate.json"></script>
+    <script type="text/javascript" src="images/countries/economic.json"></script>
+    <script type="text/javascript" src="images/countries/geology.json"></script>
   </head>
 
   <body onload="">
@@ -61,7 +72,8 @@
     <script type="text/javascript">window.onload = CreateTimer('timer',1000);</script>
     </div>
     <div id="clicksCounter" style="width:25%; float:right">
-      <b>Remaining clicks: 10</b>
+      <b>Remaining clicks:</b>
+      <b id="numberOfClicks"></b>
     </div>
 
     <!-- add the logbook a.k.a. guide -->
@@ -78,11 +90,18 @@
     <!-- create the viewer holding the image -->
     <div>
       <div id="arrowleft" onclick="leftArrowClicked();"></div>
+      <div style="width: 10%; float:left" onclick="leftArrowClicked();">previous scene</div>
       <div id="arrowfill"></div>
+      <div style="width: 10%; float:left" onclick="leftArrowClicked();">next scene</div>
       <div id="arrowright" onclick="rightArrowClicked();"></div>
-      <div id="viewframe" style="float:center; border: 0px; padding: 0px; margin: 0 0 0 0;">
+      <div id="viewframe" style="float:center; border: 0px; padding: 0px; margin: 0; position: relative; text-align: center;">
         <div id="play" onclick="gfStart()"></div>
+        <button id="instruction_button" onClick="window.open('https://docs.google.com/presentation/d/1zqjivMm68D8PHyV6c9gx0BkMRbJInFjwp3wycIYSDQo/edit?usp=sharing');">How to Play</button>
       </div>
+    </div>
+
+    <!-- create the guess dropdown -->
+    <div id="eog">
     </div>
 
   </body>

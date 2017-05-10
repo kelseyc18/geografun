@@ -1,0 +1,63 @@
+iceland.scene[4] = {
+  "name": "scene4",
+  "clues": [
+     {
+       "tag": "iceland_clue7",
+       "name": "industry",
+       "img": "images/mickeymouse.jpg",
+        "position": [0, 10, 35, 85],
+        "data":
+        {
+          "type": "economic",
+          "size": [300,300],
+          "text": "This is one of the major industries in the region, contributing to more than 5% of this country’s economy and providing jobs to nearly 12% of the workforce.<br><br>What industry do you think it is?",
+          "list": [
+            "Fishing",
+            "Agriculture",
+            "Tourism",
+            "Mining",
+            "Manufacturing"
+          ],
+          "img": "images/mickeymouse.jpg",
+          "research":
+            [
+              {"name": "fishing industry" , "link": "https://en.wikipedia.org/wiki/Fishing_industry" },
+              {"name": "agriculture" , "link": "https://en.wikipedia.org/wiki/Agriculture" },
+              {"name": "tourism" , "link": "https://en.wikipedia.org/wiki/Tourism" },
+              {"name": "mining" , "link": "https://en.wikipedia.org/wiki/Mining#Mining_industry" },
+              {"name": "manufacturing" , "link": "https://en.wikipedia.org/wiki/Manufacturing" },
+            ]
+        },
+        "symbol": "none"
+     },
+     {
+       "tag": "iceland_clue8",
+       "name": "industry",
+       "img": "images/mickeymouse.jpg",
+        "position": [80, 35, 19, 40],
+        "data":
+        {
+          "type": "economic",
+          "size": [300,300],
+          "text": "This is a major industry for the region, contributing to more than a quarter of the country’s economy.<br><br>What industry do you think it is?",
+          "list": [
+            "Fishing",
+            "Agriculture",
+            "Tourism",
+            "Mining",
+            "Manufacturing"
+          ],
+          "img": "images/mickeymouse.jpg",
+          "research":
+            [
+              {"name": "fishing industry" , "link": "https://en.wikipedia.org/wiki/Fishing_industry" },
+              {"name": "agriculture" , "link": "https://en.wikipedia.org/wiki/Agriculture" },
+              {"name": "tourism" , "link": "https://en.wikipedia.org/wiki/Tourism" },
+              {"name": "mining" , "link": "https://en.wikipedia.org/wiki/Mining#Mining_industry" },
+              {"name": "manufacturing" , "link": "https://en.wikipedia.org/wiki/Manufacturing" },
+            ]
+        },
+        "symbol": "none"
+     },
+  ]
+}

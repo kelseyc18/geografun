@@ -1,0 +1,24 @@
+iceland.scene[2] = {
+  "name": "scene2",
+  "clues": [
+     {
+       "tag": "iceland_clue5",
+       "name": "aurora",
+       "img": "images/mickeymouse.jpg",
+        "position": [40, 5, 30, 50],
+        "data":
+        {
+          "type": "climate",
+          "size": [300,300],
+          "text": "This is an aurora during the winter. Auroras are caused by the collision of electrons (from solar wind) and gas atoms (in Earth’s magnetosphere) in the upper atmosphere.<br><br>Where would one expect to observe auroras?",
+          "list": ["North Pole", "Equator", "South Pole"],
+          "img": "images/mickeymouse.jpg",
+          "research":
+            [
+              {"name": "aurora" , "link": "https://en.wikipedia.org/wiki/Aurora" },
+            ]
+        },
+        "symbol": "none"
+     },
+  ]
+}

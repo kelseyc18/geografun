@@ -1,0 +1,25 @@
+iceland.scene[6] = {
+  "name": "scene6",
+  "clues": [
+     {
+       "tag": "iceland_clue11",
+       "name": "sign",
+       "img": "images/mickeymouse.jpg",
+        "position": [10,25,10,20],
+        "data":
+        {
+          "type": "language",
+          "size": [300,300],
+          "text": "This sign has words in the official language of this country. What languages might be present on this sign?",
+          "list": ["English","Spanish","German","Swedish","Icelandic","Hebrew","Japanese"],
+          "img": "images/mickeymouse.jpg",
+          "research":
+            [
+              {"name": "latin" , "link": "https://en.wikipedia.org/wiki/Latin" },
+              {"name": "cyrillic" , "link": "https://en.wikipedia.org/wiki/Cyrillic_script" }
+            ]
+        },
+        "symbol": "none"
+     },
+  ]
+}

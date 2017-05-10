@@ -1,0 +1,36 @@
+iceland.scene[3] = {
+  "name": "scene3",
+  "clues": [
+     {
+       "tag": "iceland_clue6",
+       "name": "snow",
+       "img": "images/mickeymouse.jpg",
+        "position": [0, 0, 100, 100],
+        "data":
+        {
+          "type": "climate",
+          "size": [300,300],
+          "text": "The weather at this location can vary frequently throughout the year to great extremes. It has long, very cold winters and short, mild summers.<br><br>What kind of climate might this description correspond to?",
+          "list": [
+            "Rainforest",
+            "Monsoon",
+            "Tropical savanna",
+            "Humid subtropical",
+            "Humid continental",
+            "Oceanic climate",
+            "Mediterranean climate",
+            "Steppe",
+            "Subarctic climate",
+            "Tundra",
+            "Polar ice cap"
+          ],
+          "img": "images/mickeymouse.jpg",
+          "research":
+            [
+              {"name": "climate classification" , "link": "https://en.wikipedia.org/wiki/Climate#Climate_classification" },
+            ]
+        },
+        "symbol": "none"
+     },
+  ]
+}
