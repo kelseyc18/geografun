@@ -9,6 +9,10 @@ function gfStart()
   if (play!=undefined)
     viewer.removeChild( document.getElementById('play') );
 
+  if ($('#instruction_button').length) {
+    $('#instruction_button').remove()
+  }
+
   // initialize the countries in the guide
   gf.guide = {};
   gf.guide.countries = [];
