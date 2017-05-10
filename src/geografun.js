@@ -57,6 +57,12 @@ function gfStart()
   gf.possibleEntries.push( {name: "Manufacturing", list: manufacturing_ });
   gf.possibleEntries.push( {name: "Mining", list: mining_ });
 
+  gf.possibleEntries.push( {name: "delta", list: delta_ });
+  gf.possibleEntries.push( {name: "desert", list: desert_ });
+  gf.possibleEntries.push( {name: "glacier", list: glacier_ });
+  gf.possibleEntries.push( {name: "geyser", list: geyser_ });
+  gf.possibleEntries.push( {name: "mountain", list: mountain_ });
+
   var eog = document.getElementById("eog");
   var select = document.createElement('select');
   select.id = "selectEOG";
