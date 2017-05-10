@@ -16,6 +16,7 @@ function gfStart()
   // initialize the countries in the guide
   gf.guide = {};
   gf.guide.countries = [];
+  gf.cluesFound = [];
 
   // set the image counter and default location (optionally set a new location)
   gfSetLocation();
@@ -348,8 +349,8 @@ function getAllCountries()
     var clist = gf.possibleEntries[i].list;
     for (var j in clist)
     {
-      if (!(countries.includes(clist[j]))) {
-        countries.push( clist[j] );
+      if (!(countries.includes(clist[j].trim()))) {
+        countries.push( clist[j].trim() );
       }
     }
   }
