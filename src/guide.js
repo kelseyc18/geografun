@@ -26,7 +26,7 @@ function makeGuideEntry(field,conclusion,reason,imgsrc,clueID)
   type.innerHTML = field + ":";
   type.style.fontWeight = "bold";
   text.innerHTML = conclusion;
-  why.innerHTML = reason;
+  why.innerHTML = "<i>Notes:</i> " + reason;
   var delbutton = document.createElement('button');
   delbutton.innerHTML= "delete entry";
   delbutton.onclick = function() { row.parentNode.removeChild(row); };

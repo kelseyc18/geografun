@@ -68,7 +68,7 @@ function gfStart()
     select.appendChild(option);
   }
   var eogPrompt = document.createElement('p');
-  eogPrompt.innerHTML = 'What country do you think this is?';
+  eogPrompt.innerHTML = 'Which country do you think this is?';
   eog.appendChild(eogPrompt);
   eog.appendChild(select);
 
@@ -214,7 +214,7 @@ function submitEvidenceEntry(evidenceWindow,evidence,doc,clueID)
   //var entries = getCheckedEntries(doc.getElementById("evidenceTable"),0,1);
   var entries = getCheckedRows(doc.getElementById("evidenceTable"),0,1);
 
-  var reason = prompt("Enter a reason"); // or use evidence.name
+  var reason = evidenceWindow.prompt("Enter a reason"); // or use evidence.name
   makeGuideEntry(type,entries,reason,evidence.img,clueID);
 
   evidenceWindow.close();
@@ -231,7 +231,9 @@ function makeSubmitButton(evidenceWindow,evidence,doc,clueID)
   submit.style.display = "block";
   doc.body.appendChild(submit);
 
-  submit.onclick = function() { submitEvidenceEntry(evidenceWindow,evidence,doc,clueID); };
+  submit.onclick = function() {
+    submitEvidenceEntry(evidenceWindow,evidence,doc,clueID);
+  };
 
   updateMap();
 }
