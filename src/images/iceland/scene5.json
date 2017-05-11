@@ -43,8 +43,14 @@ iceland.scene[5] = {
           "img": "images/mickeymouse.jpg",
           "research":
             [
-              {"name": "latin" , "link": "https://en.wikipedia.org/wiki/Latin" },
-              {"name": "cyrillic" , "link": "https://en.wikipedia.org/wiki/Cyrillic_script" }
+              {"name": "English" , "link": "https://en.wikipedia.org/wiki/English_language" },
+              {"name": "Spanish" , "link": "https://en.wikipedia.org/wiki/Spanish_language" },
+              {"name": "German" , "link": "https://en.wikipedia.org/wiki/German_language" },
+              {"name": "Swedish" , "link": "https://en.wikipedia.org/wiki/Swedish_language" },
+              {"name": "Icelandic" , "link": "https://en.wikipedia.org/wiki/Icelandic_language" },
+              {"name": "Hebrew" , "link": "https://en.wikipedia.org/wiki/Hebrew_language" },
+              {"name": "Japanese" , "link": "https://en.wikipedia.org/wiki/Japanese_language" },
+              {"name": "Russian" , "link": "https://en.wikipedia.org/wiki/Russian_language" },
             ]
         },
         "symbol": "none"

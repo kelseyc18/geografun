@@ -226,7 +226,8 @@ function submitEvidenceEntry(evidenceWindow,evidence,doc,clueID)
   //var entries = getCheckedEntries(doc.getElementById("evidenceTable"),0,1);
   var entries = getCheckedRows(doc.getElementById("evidenceTable"),0,1);
 
-  var reason = evidenceWindow.prompt("Enter a reason"); // or use evidence.name
+  var reason = evidenceWindow.prompt("Enter Your Notes"); // or use evidence.name
+  if (!reason) reason = "";
   makeGuideEntry(type,entries,reason,evidence.img,clueID);
 
   evidenceWindow.close();
