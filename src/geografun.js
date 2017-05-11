@@ -17,6 +17,7 @@ function gfStart()
   gf.guide = {};
   gf.guide.countries = [];
   gf.cluesFound = [];
+  gf.attempts = 1;
 
   // set the image counter and default location (optionally set a new location)
   gfSetLocation();
@@ -112,7 +113,7 @@ function gfSetLocation()
   // set a 'random' location
   // here we only use iceland
   gf.imageCounter = 0;
-  gf.location = "iceland";
+  gf.location = "Iceland";
   gf.nscene = iceland.nscene;
   gf.scene = iceland.scene;
 }
@@ -363,12 +364,25 @@ function checkIfCorrect()
 {
   var select = document.getElementById("selectEOG");
   var guess = select.value;
-  if (gf.location==guess.toLowerCase())
-    alert("correct!");
+  if (gf.location.toLowerCase()==guess.toLowerCase())
+    alert("Correct! The country was " + gf.location + ".\nTotal attempts = " + gf.attempts + "\nClues found = " + gf.cluesFound.length);
   else
   {
-    alert("wrong!");
-    location.reload();
+    $('#dialog-wrong-answer').dialog({
+      resizable: false,
+      height: 'auto',
+      width: 400,
+      modal: true,
+      buttons: {
+        "Restart": function() {
+          location.reload();
+        },
+        "Continue": function() {
+          gf.attempts += 1;
+          $( this ).dialog( "close" );
+        }
+      }
+    });
   }
 }
 

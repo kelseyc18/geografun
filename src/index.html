@@ -6,6 +6,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <style> body {font-family: Ubuntu, sans-serif; } </style>
     <link rel="stylesheet" type="text/css" href="geografun.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css">
 
     <title>
       geografun
@@ -18,7 +19,7 @@
       var totalSeconds;
       var timer;
       var gf = {};
-      var minEntryCount = 3;
+      var minEntryCount = 0;
     </script>
 
     <!-- third-party libraries -->
@@ -27,6 +28,7 @@
     <script src="third_party/jquery-jvectormap-2.0.3.min.js"></script>
     <script src="third_party/jquery-jvectormap-world-mill.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
     <!-- load scripts -->
     <script type="text/javascript" src="geografun.js"> </script>
@@ -106,6 +108,12 @@
 
     <!-- create the guess dropdown -->
     <div id="eog">
+    </div>
+
+    <div style="display:none;">
+      <div id="dialog-wrong-answer" title="Wrong Answer">
+        <p><span class="ui-icon ui-icon-alert" style="float:left; margin:12px 12px 20px 0;"></span>Your answer was not correct. Would you like to continue or restart?</p>
+      </div>
     </div>
 
   </body>
