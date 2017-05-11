@@ -124,7 +124,7 @@ function gfSetImage()
   gf.imageNumber = gf.imageCounter % gf.nscene;
 
   // set the current image from location and current scene number
-  viewer.style.backgroundImage = "url('images/"+gf.location+"/img"+gf.imageNumber.toString()+".png')";
+  viewer.style.backgroundImage = "url('images/"+gf.location.toLowerCase()+"/img"+gf.imageNumber.toString()+".png')";
   viewer.style.backgroundSize = "100% 100%";
   viewer.style.backgroundPosition = "0px 0px";
   viewer.backgroundOrigin = "content-box";
